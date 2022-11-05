@@ -6,11 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Login Page</title>
     <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
-    <link href="{{asset('public/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
-    <link href="{{asset('public/assets/css/main.css')}}" rel="stylesheet" type="text/css" />
-    <link href="{{asset('public/assets/css/authentication/form-2.css')}}" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="{{asset('public/assets/css/forms/theme-checkbox-radio.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('public/assets/css/forms/switches.css')}}">
+    <link href="{{asset('bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('assets/css/main.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('assets/css/authentication/form-2.css')}}" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/forms/theme-checkbox-radio.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/forms/switches.css')}}">
     <style>
         .form-form .form-form-wrap form .field-wrapper svg.feather-eye {
             top: 46px;
@@ -35,7 +35,7 @@
                             <p class="text-success">{{ Session::get('success') }}</p>
                         @endif
                         
-                        <form method="POST" action="{{ route('login') }}" class="text-left">
+                        <form method="POST" action="{{ route('login_save') }}" class="text-left">
                            @csrf
                             <div class="form">
 
@@ -91,9 +91,9 @@
             </div>
         </div>
     </div>
-    <script src="{{asset('public/assets/js/libs/jquery-3.1.1.min.js')}}"></script>
-    <script src="{{asset('public/bootstrap/js/popper.min.js')}}"></script>
-    <script src="{{asset('public/bootstrap/js/bootstrap.min.js')}}"></script>
-    <script src="{{asset('public/assets/js/authentication/form-2.js')}}"></script>
+    <script src="{{asset('assets/js/libs/jquery-3.1.1.min.js')}}"></script>
+    <script src="{{asset('bootstrap/js/popper.min.js')}}"></script>
+    <script src="{{asset('bootstrap/js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('assets/js/authentication/form-2.js')}}"></script>
 </body>
 </html>

@@ -6,35 +6,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Sales Admin | CORK - Multipurpose Bootstrap Dashboard Template </title>
-    <link rel="icon" type="image/x-icon" href="{{asset('public/assets/img/favicon.ico')}}"/>
-    <link href="{{asset('public/assets/css/loader.css')}}" rel="stylesheet" type="text/css" />
-    <script src="{{asset('public/assets/js/loader.js')}}"></script>
+    <link rel="icon" type="image/x-icon" href="{{asset('assets/img/favicon.ico')}}"/>
+    <link href="{{asset('assets/css/loader.css')}}" rel="stylesheet" type="text/css" />
+    <script src="{{asset('assets/js/loader.js')}}"></script>
     <!-- BEGIN GLOBAL MANDATORY STYLES -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
-    <link href="{{asset('public/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
-    <link href="{{asset('public/assets/css/plugins.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('assets/css/plugins.css')}}" rel="stylesheet" type="text/css" />
     <!-- END GLOBAL MANDATORY STYLES -->
 
     <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM STYLES -->
-    <link href="{{asset('public/plugins/apex/apexcharts.css')}}" rel="stylesheet" type="text/css">
-    <link href="{{asset('public/assets/css/dashboard/dash_1.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('plugins/apex/apexcharts.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{asset('assets/css/dashboard/dash_1.css')}}" rel="stylesheet" type="text/css" />
     <!-- END PAGE LEVEL PLUGINS/CUSTOM STYLES -->
     <!--Table css -->
-    <link href="{{asset('public/assets/css/tables/table-basic.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('assets/css/tables/table-basic.css')}}" rel="stylesheet" type="text/css" />
 
-    <link rel="stylesheet" type="text/css" href="{{asset('public/plugins/table/datatable/datatables.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('public/plugins/table/datatable/dt-global_style.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('plugins/table/datatable/datatables.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('plugins/table/datatable/dt-global_style.css')}}">
     <!-- END Table-->
 
     <!-- css3SIS -->
-     <link rel="stylesheet" type="text/css" href="{{asset('public/assets/css3SIS/dataTable3SIS.css')}}">
-     <link rel="stylesheet" type="text/css" href="{{asset('public/assets/css3SIS/button3SIS.css')}}">
-      <!-- <link href="{{asset('public/assets/css/main.css')}}" rel="stylesheet" type="text/css" /> -->
+     <link rel="stylesheet" type="text/css" href="{{asset('assets/css3SIS/dataTable3SIS.css')}}">
+     <link rel="stylesheet" type="text/css" href="{{asset('assets/css3SIS/button3SIS.css')}}">
+      <!-- <link href="{{asset('assets/css/main.css')}}" rel="stylesheet" type="text/css" /> -->
     <!-- END css3SIS -->
 
     <!--  BEGIN CUSTOM STYLE FILE  -->
-    <link href="{{asset('public/assets/css/scrollspyNav.css')}}" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="{{asset('public/plugins/select2/select2.min.css')}}">
+    <link href="{{asset('assets/css/scrollspyNav.css')}}" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="{{asset('plugins/select2/select2.min.css')}}">
     <!--  END CUSTOM STYLE FILE  -->
 
     @yield('css')
@@ -68,33 +68,33 @@
     <!-- END MAIN CONTAINER -->
 
     <!-- BEGIN GLOBAL MANDATORY SCRIPTS -->
-    <script src="{{asset('public/assets/js/libs/jquery-3.1.1.min.js')}}"></script>
-    <script src="{{asset('public/bootstrap/js/popper.min.js')}}"></script>
-    <script src="{{asset('public/bootstrap/js/bootstrap.min.js')}}"></script>
-    <script src="{{asset('public/plugins/perfect-scrollbar/perfect-scrollbar.min.js')}}"></script>
-    <script src="{{asset('public/assets/js/app.js')}}"></script>
+    <script src="{{asset('assets/js/libs/jquery-3.1.1.min.js')}}"></script>
+    <script src="{{asset('bootstrap/js/popper.min.js')}}"></script>
+    <script src="{{asset('bootstrap/js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('plugins/perfect-scrollbar/perfect-scrollbar.min.js')}}"></script>
+    <script src="{{asset('assets/js/app.js')}}"></script>
 
-    <script src="{{asset('public/assets/js/custom.js')}}"></script>
+    <script src="{{asset('assets/js/custom.js')}}"></script>
     <!-- END GLOBAL MANDATORY SCRIPTS -->
 
     <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
-    <script src="{{asset('public/plugins/apex/apexcharts.min.js')}}"></script>
-    <script src="{{asset('public/assets/js/dashboard/dash_1.js')}}"></script>
+    <script src="{{asset('plugins/apex/apexcharts.min.js')}}"></script>
+    <script src="{{asset('assets/js/dashboard/dash_1.js')}}"></script>
     <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
 
     <!-- BEGIN DataTable -->
-    <script src="{{asset('public/plugins/table/datatable/datatables.js')}}"></script>
+    <script src="{{asset('plugins/table/datatable/datatables.js')}}"></script>
 
     <!--  BEGIN CUSTOM SCRIPTS FILE  -->
-    <script src="{{asset('public/assets/js/scrollspyNav.js')}}"></script>
-    <script src="{{asset('public/plugins/select2/select2.min.js')}}"></script>
-    <script src="{{asset('public/plugins/select2/custom-select2.js')}}"></script>
+    <script src="{{asset('assets/js/scrollspyNav.js')}}"></script>
+    <script src="{{asset('plugins/select2/select2.min.js')}}"></script>
+    <script src="{{asset('plugins/select2/custom-select2.js')}}"></script>
     
-    <script src="{{asset('public/plugins/bootstrap-maxlength/bootstrap-maxlength.js')}}"></script>
-    <script src="{{asset('public/plugins/bootstrap-maxlength/custom-bs-maxlength.js')}}"></script>
+    <script src="{{asset('plugins/bootstrap-maxlength/bootstrap-maxlength.js')}}"></script>
+    <script src="{{asset('plugins/bootstrap-maxlength/custom-bs-maxlength.js')}}"></script>
 
-    <link href="{{asset('public/assets/css/components/tabs-accordian/custom-tabs.css')}}" rel="stylesheet" type="text/css" />
-    <script src="{{asset('public/assets/js/common3SIS/validation3SIS.js')}}"></script>
+    <link href="{{asset('assets/css/components/tabs-accordian/custom-tabs.css')}}" rel="stylesheet" type="text/css" />
+    <script src="{{asset('assets/js/common3SIS/validation3SIS.js')}}"></script>
 
     <script>
         $(document).ready(function() {

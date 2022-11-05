@@ -9,6 +9,9 @@ class AuthController extends Controller
 {
    public function index()
     {
+        if(\Auth::id()){
+          return redirect('/company/index');
+        }
         return view('auth.login');
     }
     public function login(Request $request){
@@ -25,7 +28,7 @@ class AuthController extends Controller
             return redirect('/company/index');
         }
 
-        return redirect('login')->withError('Login details are not valid');
+        return redirect()->back()->withError('Login details are not valid');
 
     }
     public function register_view()

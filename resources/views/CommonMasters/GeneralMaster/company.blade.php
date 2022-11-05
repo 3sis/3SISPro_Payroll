@@ -2,7 +2,7 @@
 
 @section('content')
 @section('css')
-<link href="{{asset('public/assets/css/components/tabs-accordian/custom-accordions.css')}}" rel="stylesheet" type="text/css" />
+<link href="{{asset('assets/css/components/tabs-accordian/custom-accordions.css')}}" rel="stylesheet" type="text/css" />
 @endsection
 <div class="layout-px-spacing">
     

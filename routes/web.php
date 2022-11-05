@@ -30,7 +30,7 @@ use App\Http\Controllers\AuthController;
 
 // Route::group(['middleware'=>'guest'],function(){
     Route::get('/',[AuthController::class,'index'])->name('login');
-    Route::post('login',[AuthController::class,'login'])->name('login')->middleware('throttle:2,1');
+    Route::post('login',[AuthController::class,'login'])->name('login_save');
 
     // Route::get('register',[AuthController::class,'register_view'])->name('register');
     // Route::post('register',[AuthController::class,'register'])->name('register')->middleware('throttle:2,1');
