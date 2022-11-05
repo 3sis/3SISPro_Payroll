@@ -3,6 +3,7 @@
 ```bash
     git clone -b develop https://github.com/3sis/3SISPro_Payroll.git
      cd 3SISPro_Payroll
+     This is Company Master Changes
      composer install
      cp .env.example .env
 
