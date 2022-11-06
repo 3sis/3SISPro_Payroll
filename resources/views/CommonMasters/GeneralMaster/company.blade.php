@@ -1,15 +1,11 @@
 @extends('layouts.app')
-
 @section('content')
 @section('css')
-<link href="{{asset('assets/css/components/tabs-accordian/custom-accordions.css')}}" rel="stylesheet" type="text/css" />
 @endsection
 <div class="layout-px-spacing">
-    
     <div>
-    
         <div class="col-xl-12 col-lg-12 col-sm-12  layout-spacing">
-            <div class=" br-6">
+            <div class=" br-6" style="padding-top: 5px;">
                 <div style='float:right; padding-right:30px'>
                     <button type='button' name='Undo' id='Undelete_Data' class='btn btnUnDeleteRec3SIS'>Undo
                         <i class="fas fa-undo-alt fa-sm ml-1"> </i>
@@ -18,7 +14,7 @@
                         <i class="fas fa-plus fa-sm ml-1"> </i>
                     </button>
                 </div>                
-                <div class="table-responsive">
+                <div class="table-responsive" style="padding-top: 5px;">
                     <table id="html5-extension3SIS" class="table table-hover non-hover" style="width:100%">
                         <thead>
                             <tr>
@@ -131,13 +127,13 @@
                                       <div class="card">
                                         <div class="card-header" id="headingOne1">
                                           <section class="mb-0 mt-0">
-                                            <div role="menu" class="collapsed" data-toggle="collapse" data-target="#defaultAccordionOne" aria-expanded="false" aria-controls="defaultAccordionOne">
+                                            <div role="menu" class="" data-toggle="collapse" data-target="#defaultAccordionOne" aria-expanded="true" aria-controls="defaultAccordionOne">
                                               General Info  <div class="icons"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
                                             </div>
                                           </section>
                                         </div>
 
-                                        <div id="defaultAccordionOne" class="collapse" aria-labelledby="headingOne1" data-parent="#toggleAccordion" style="">
+                                      <div id="defaultAccordionOne" class="collapse show" aria-labelledby="headingOne1" data-parent="#toggleAccordion" style="">
                                           <div class="card-body">
                                                  <!-- Hidden Fields -->  
                                                     <div class='form-group mb-0'>
