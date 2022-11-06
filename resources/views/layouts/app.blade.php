@@ -29,14 +29,14 @@
     <!-- css3SIS -->
      <link rel="stylesheet" type="text/css" href="{{asset('assets/css3SIS/dataTable3SIS.css')}}">
      <link rel="stylesheet" type="text/css" href="{{asset('assets/css3SIS/button3SIS.css')}}">
-      <!-- <link href="{{asset('assets/css/main.css')}}" rel="stylesheet" type="text/css" /> -->
+     
     <!-- END css3SIS -->
 
     <!--  BEGIN CUSTOM STYLE FILE  -->
     <link href="{{asset('assets/css/scrollspyNav.css')}}" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" type="text/css" href="{{asset('plugins/select2/select2.min.css')}}">
     <!--  END CUSTOM STYLE FILE  -->
-
+<link href="{{asset('assets/css/components/tabs-accordian/custom-accordions.css')}}" rel="stylesheet" type="text/css" />
     @yield('css')
 </head>
 <body>
