@@ -227,27 +227,3 @@
         </header>
     </div>
     <!--  END NAVBAR  -->
-      @section('js_code')
-    <script type="text/javascript">
-        function fastpath(_this){
-            alert(_this);
-            console.log(_this.value);
-                $.ajax({
-                type : 'get',
-                url : "{{url('fastpath')}}",
-                data:{'search':_this.value},
-                success:function(response){
-                 console.log(response.status);
-
-                 if(response.status == 'success'){
-                    console.log(response.redirect_url);
-                    window.location = response.redirect_url;
-                 }else{
-                    alert("FastPath not found ?");
-                    return false;
-                 }
-                }
-                });
-        }
-    </script>
-    @endsection
