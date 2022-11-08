@@ -3,163 +3,163 @@
 /****************************** Blue Theme Browser - Dark Background******************************/
 
 /* Table Header: Background | Font Color | */
-#blueBrowserOnDark3SIS th {
+.blueBrowserOnDark3SIS th {
     padding-top: 5px !important;
     padding-bottom: 5px !important;
-     background: #082567; 
-     height: auto !important; 
+     background: #2196F3 !important;
+     height: auto !important;
     font-family: 'Segoe UI', 'Calibri', 'Cambria', 'Cochin', Georgia, Times, 'Times New Roman', serif;
     font-size: 15px;
-    font-weight: bold;    
-    color: #ebdeec !important; 
-    border: 1px solid #FFFFFF !important;    
+    font-weight: bold;
+    color: #ebdeec !important;
+    border: 1px solid #FFFFFF !important;
     border-collapse: collapse !important;
     white-space: nowrap;
 }
 /* Table Detail: Background Color | */
-#blueBrowserOnDark3SIS tr {     
-    background: #6CA0DC !important;       
+.blueBrowserOnDark3SIS tr {
+    background: #d2eafd !important;
     /* background: #A1CAF1 !important;              */
 }
 /* Table Detail Cell: Font Size | Font Color | Cell Border color */
-#blueBrowserOnDark3SIS td {  
+.blueBrowserOnDark3SIS td {
     padding-top: 2px !important;
-    padding-bottom: 2px !important; 
+    padding-bottom: 2px !important;
     font-family: 'Segoe UI', 'Calibri', 'Cambria', 'Cochin', Georgia, Times, 'Times New Roman', serif;
     font-size: 13px !important;
     color: black !important;
     font-weight: bold;
-    border: 1px solid #FFFFFF !important;     
+    border: 1px solid #FFFFFF !important;
     overflow: hidden;
     white-space: nowrap;
     border-collapse: collapse !important;
   }
 
 /* Table Detail Hover Color */
-#blueBrowserOnDark3SIS tr:hover {
-    background-color: #4D4DFF !important;
+.blueBrowserOnDark3SIS tr:hover {
+    background-color: #79bff8 !important;
 }
 /****************************** Blue Theme Browser - Dark Background Ends ******************************/
 
 /****************************** Purple Theme Browser - Dark Background******************************/
 
 /* Table Header: Background | Font Color | */
-#purpleBrowserOnDark3SIS th {
+.purpleBrowserOnDark3SIS th {
     padding-top: 5px !important;
     padding-bottom: 5px !important;
-     background: #43294D; 
-     height: auto !important; 
+     background: #9C27B0 !important;
+     height: auto !important;
     font-family: 'Segoe UI', 'Calibri', 'Cambria', 'Cochin', Georgia, Times, 'Times New Roman', serif;
     font-size: 15px;
-    font-weight: bold;    
-    color: #ebdeec !important; 
-    border: 1px solid #FFFFFF !important;    
+    font-weight: bold;
+    color: #ebdeec !important;
+    border: 1px solid #FFFFFF !important;
     border-collapse: collapse !important;
     white-space: nowrap;
 }
 /* Table Detail: Background Color | */
-#purpleBrowserOnDark3SIS tr {     
-    background: #B284BE !important;       
+.purpleBrowserOnDark3SIS tr {
+    background: #efcef4 !important;
     /* background: #A1CAF1 !important;              */
 }
 /* Table Detail Cell: Font Size | Font Color | Cell Border color */
-#purpleBrowserOnDark3SIS td {  
+.purpleBrowserOnDark3SIS td {
     padding-top: 2px !important;
-    padding-bottom: 2px !important; 
+    padding-bottom: 2px !important;
     font-family: 'Segoe UI', 'Calibri', 'Cambria', 'Cochin', Georgia, Times, 'Times New Roman', serif;
     font-size: 13px !important;
     color: black !important;
     font-weight: bold;
-    border: 1px solid #FFFFFF !important;     
+    border: 1px solid #FFFFFF !important;
     overflow: hidden;
     white-space: nowrap;
     border-collapse: collapse !important;
   }
 
 /* Table Detail Hover Color */
-#purpleBrowserOnDark3SIS tr:hover {
-    background-color: #8B008B !important;
+.purpleBrowserOnDark3SIS tr:hover {
+    background-color: #de9eea !important;
 }
 /****************************** purple Theme Browser - Dark Background Ends ******************************/
 
 /****************************** green Theme Browser - Dark Background******************************/
 
 /* Table Header: Background | Font Color | */
-#greenBrowserOnDark3SIS th {
+.greenBrowserOnDark3SIS th {
     padding-top: 5px !important;
     padding-bottom: 5px !important;
-     background: #014421; 
-     height: auto !important; 
+     background: #4caf50;
+     height: auto !important;
     font-family: 'Segoe UI', 'Calibri', 'Cambria', 'Cochin', Georgia, Times, 'Times New Roman', serif;
     font-size: 15px;
-    font-weight: bold;    
-    color: #ebdeec !important; 
-    border: 1px solid #FFFFFF !important;    
+    font-weight: bold;
+    color: #ebdeec !important;
+    border: 1px solid #FFFFFF !important;
     border-collapse: collapse !important;
     white-space: nowrap;
 }
 /* Table Detail: Background Color | */
-#greenBrowserOnDark3SIS tr {     
-    background: #20B2AA !important;       
+.greenBrowserOnDark3SIS tr {
+    background: #dbefdc !important;
     /* background: #A1CAF1 !important;              */
 }
 /* Table Detail Cell: Font Size | Font Color | Cell Border color */
-#greenBrowserOnDark3SIS td {  
+.greenBrowserOnDark3SIS td {
     padding-top: 2px !important;
-    padding-bottom: 2px !important; 
+    padding-bottom: 2px !important;
     font-family: 'Segoe UI', 'Calibri', 'Cambria', 'Cochin', Georgia, Times, 'Times New Roman', serif;
     font-size: 13px !important;
     color: black !important;
     font-weight: bold;
-    border: 1px solid #FFFFFF !important;     
+    border: 1px solid #FFFFFF !important;
     overflow: hidden;
     white-space: nowrap;
     border-collapse: collapse !important;
   }
 
 /* Table Detail Hover Color */
-#greenBrowserOnDark3SIS tr:hover {
-    background-color: #CAE00D !important;
+.greenBrowserOnDark3SIS tr:hover {
+    background-color: #93cf95 !important;
 }
 /****************************** green Theme Browser - Dark Background Ends ******************************/
 
 /****************************** red Theme Browser - Dark Background******************************/
 
 /* Table Header: Background | Font Color | */
-#redBrowserOnDark3SIS th {
+.redBrowserOnDark3SIS th {
     padding-top: 5px !important;
     padding-bottom: 5px !important;
-     background: #65000B; 
-     height: auto !important; 
+     background: #e91e63;
+     height: auto !important;
     font-family: 'Segoe UI', 'Calibri', 'Cambria', 'Cochin', Georgia, Times, 'Times New Roman', serif;
     font-size: 15px;
-    font-weight: bold;    
-    color: #ebdeec !important; 
-    border: 1px solid #FFFFFF !important;    
+    font-weight: bold;
+    color: #ebdeec !important;
+    border: 1px solid #FFFFFF !important;
     border-collapse: collapse !important;
     white-space: nowrap;
 }
 /* Table Detail: Background Color | */
-#redBrowserOnDark3SIS tr {     
-    background: #FFCBCB !important;       
+.redBrowserOnDark3SIS tr {
+    background: #fdd9d6 !important;
     /* background: #A1CAF1 !important;              */
 }
 /* Table Detail Cell: Font Size | Font Color | Cell Border color */
-#redBrowserOnDark3SIS td {  
+.redBrowserOnDark3SIS td {
     padding-top: 2px !important;
-    padding-bottom: 2px !important; 
+    padding-bottom: 2px !important;
     font-family: 'Segoe UI', 'Calibri', 'Cambria', 'Cochin', Georgia, Times, 'Times New Roman', serif;
     font-size: 13px !important;
     color: black !important;
     font-weight: bold;
-    border: 1px solid #FFFFFF !important;     
+    border: 1px solid #FFFFFF !important;
     overflow: hidden;
     white-space: nowrap;
     border-collapse: collapse !important;
   }
 
 /* Table Detail Hover Color */
-#redBrowserOnDark3SIS tr:hover {
-    background-color: #EA3C53 !important;
+.redBrowserOnDark3SIS tr:hover {
+    background-color: #f6a6c1 !important;
 }
 /****************************** red Theme Browser - Dark Background Ends ******************************/

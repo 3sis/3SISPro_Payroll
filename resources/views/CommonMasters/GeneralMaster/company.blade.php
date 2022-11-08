@@ -15,7 +15,7 @@
                     </button>
                 </div>
                 <div class="table-responsive" style="padding-top: 5px;">
-                    <table id="greenBrowserOnDark3SIS" class="table table-hover non-hover" style="width:100%">
+                    <table id="landingPageBrowser3SIS" class="purpleBrowserOnDark3SIS" style="width:100%">
                         <thead>
                             <tr>
                                 <!--CopyChange-->
@@ -616,7 +616,7 @@
     $(document).ready(function(){
         $modalTitle = 'Company'
 
-        $('#greenBrowserOnDark3SIS').DataTable( {
+        $('#landingPageBrowser3SIS').DataTable( {
             // dom: '<"row"<"col-md-12"<"row"<"col-md-6"B><"col-md-6"f> > ><"col-md-12"rt> \
             //     <"col-md-12"<"row"<"col-md-5"i><"col-md-7"p>>> >',
             buttons: {
@@ -837,7 +837,7 @@
                         $finalMessage3SIS = fnSingleLevelFinalSave(data.masterName, data.Id, data.Desc1, data.updateMode);
                         $('#FinalSaveMessage').html($finalMessage3SIS);
                         fnReinstateFormControl('0');
-                        $('#greenBrowserOnDark3SIS').DataTable().ajax.reload();
+                        $('#landingPageBrowser3SIS').DataTable().ajax.reload();
                         if(data.updateMode=='Updated')
                         {
                             $('#entryModalSmall').modal('hide');
@@ -881,7 +881,7 @@
                 {
                     $finalMessage3SIS = fnSingleLevelFinalSave(data.masterName, data.Id, data.Desc1, data.updateMode);
                     $('#FinalSaveMessage').html($finalMessage3SIS);
-                    $('#greenBrowserOnDark3SIS').DataTable().ajax.reload();
+                    $('#landingPageBrowser3SIS').DataTable().ajax.reload();
                     // $('#html-extension3SIS').DataTable().ajax.reload();
                     UniqueId = 0;
                     $('#modalZoomDeleteRecord3SIS').modal('hide');
@@ -944,7 +944,7 @@
                     data:{id:DeletedUniqueId},
                     success:function(data)
                     {
-                        $('#greenBrowserOnDark3SIS').DataTable().ajax.reload();
+                        $('#landingPageBrowser3SIS').DataTable().ajax.reload();
                         $('#html-extension3SIS').DataTable().ajax.reload();
                         DeletedUniqueId = 0;
                         $('#modalZoomRestoreRecord3SIS').modal('hide');
