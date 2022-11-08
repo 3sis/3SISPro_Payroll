@@ -39,8 +39,11 @@ class CompanyController extends Controller
         $city_list = City::all();
         $bank1_list = BankName::all();
         $bank2_list = BranchName::all();
+        // $UserId = \Auth::user()->name;
+        // dd($UserId);
 
-        return view('CommonMasters.GeneralMaster.company',compact('menu','currency_list','city_list','bank1_list','bank2_list'))->with($data);
+        return view('CommonMasters.GeneralMaster.company',
+        compact('menu','currency_list','city_list','bank1_list','bank2_list', 'UserId'))->with($data);
     }
     function BrowserData()
     {
