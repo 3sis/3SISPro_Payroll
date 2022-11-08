@@ -514,46 +514,10 @@ textarea.form-control {
 /* F4 List Dtat table using Class Ends*/
 
 
-
-
-/*Datatable custom style - Krishna*/
-#html5-extension3SIS tr:hover {
-    background-color: #f00 !important;
-}
-
-#html5-extension3SIS tr th {
-     background: #343A40; 
-     height: 10px !important; 
-    font-family: 'Segoe UI', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 15px;
-    font-weight: bold;
-    white-space: nowrap;
-     color: #0f0 !important; 
-}
-
-#html5-extension3SIS tr {
-     background: yellow !important; 
-    height: 1rem !important;
-    padding-top: 0.25rem !important;
-    padding-bottom: 0.25rem !important;
-    font-family: 'Segoe UI', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 14px;
-    font-weight: 100;
-    color: white;
-    overflow: hidden; /* this is what fixes the expansion */
-    white-space: nowrap;
-}
-
-#html5-extension3SIS th, td {
-  border: 1px solid #000 !important; 
-  border-collapse: collapse !important;
-}
-
-
-#toggleAccordion label{
+/* #toggleAccordion label{
      color: yellow !important; 
 }
 
 #toggleAccordion input,textarea{
      background: brown !important; 
-}
+} */
