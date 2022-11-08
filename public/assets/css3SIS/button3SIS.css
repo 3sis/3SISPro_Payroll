@@ -136,21 +136,21 @@
 /*Button - Edit Record*/
 .btnEditRec3SIS {
     color: white;
-    border-color: #1b55e2 ;
-    background-color: #1b55e2 ;
+    border-color: black ;
+    background-color: black ;
     padding: 0px 5px 0px 5px;
 }
     .btnEditRec3SIS:hover {
-        color: #1b55e2;
-        background-color: black;
-        border-color: #1b55e2;
+        color: #78184A;
+        background-color: white;
+        border-color: #78184A;
     }
     
 /*Button - Delete Record*/
 .btnDeleteRec3SIS {
     color: white;
-    border-color: rgb(220, 53, 69) ;
-    background-color: rgb(220, 53, 69) ;
+    border-color: #790604 ;
+    background-color: #790604 ;
     padding: 0px 5px 0px 5px;
 }
     .btnDeleteRec3SIS:hover {

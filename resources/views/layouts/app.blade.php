@@ -27,7 +27,9 @@
     <!-- END Table-->
 
     <!-- css3SIS -->
-     <link rel="stylesheet" type="text/css" href="{{asset('assets/css3SIS/dataTable3SIS.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css3SIS/dataTable3SIS.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css3SIS/browser3SIS.css')}}">
+     <link rel="stylesheet" type="text/css" href="{{asset('assets/css3SIS/entryScreen3SIS.css')}}">
      <link rel="stylesheet" type="text/css" href="{{asset('assets/css3SIS/button3SIS.css')}}">
      
     <!-- END css3SIS -->

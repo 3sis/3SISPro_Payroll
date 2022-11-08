@@ -1,0 +1,165 @@
+/* 3SIS Customized Table Look and Feel */
+
+/****************************** Blue Theme Browser - Dark Background******************************/
+
+/* Table Header: Background | Font Color | */
+#blueBrowserOnDark3SIS th {
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+     background: #082567; 
+     height: auto !important; 
+    font-family: 'Segoe UI', 'Calibri', 'Cambria', 'Cochin', Georgia, Times, 'Times New Roman', serif;
+    font-size: 15px;
+    font-weight: bold;    
+    color: #ebdeec !important; 
+    border: 1px solid #FFFFFF !important;    
+    border-collapse: collapse !important;
+    white-space: nowrap;
+}
+/* Table Detail: Background Color | */
+#blueBrowserOnDark3SIS tr {     
+    background: #6CA0DC !important;       
+    /* background: #A1CAF1 !important;              */
+}
+/* Table Detail Cell: Font Size | Font Color | Cell Border color */
+#blueBrowserOnDark3SIS td {  
+    padding-top: 2px !important;
+    padding-bottom: 2px !important; 
+    font-family: 'Segoe UI', 'Calibri', 'Cambria', 'Cochin', Georgia, Times, 'Times New Roman', serif;
+    font-size: 13px !important;
+    color: black !important;
+    font-weight: bold;
+    border: 1px solid #FFFFFF !important;     
+    overflow: hidden;
+    white-space: nowrap;
+    border-collapse: collapse !important;
+  }
+
+/* Table Detail Hover Color */
+#blueBrowserOnDark3SIS tr:hover {
+    background-color: #4D4DFF !important;
+}
+/****************************** Blue Theme Browser - Dark Background Ends ******************************/
+
+/****************************** Purple Theme Browser - Dark Background******************************/
+
+/* Table Header: Background | Font Color | */
+#purpleBrowserOnDark3SIS th {
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+     background: #43294D; 
+     height: auto !important; 
+    font-family: 'Segoe UI', 'Calibri', 'Cambria', 'Cochin', Georgia, Times, 'Times New Roman', serif;
+    font-size: 15px;
+    font-weight: bold;    
+    color: #ebdeec !important; 
+    border: 1px solid #FFFFFF !important;    
+    border-collapse: collapse !important;
+    white-space: nowrap;
+}
+/* Table Detail: Background Color | */
+#purpleBrowserOnDark3SIS tr {     
+    background: #B284BE !important;       
+    /* background: #A1CAF1 !important;              */
+}
+/* Table Detail Cell: Font Size | Font Color | Cell Border color */
+#purpleBrowserOnDark3SIS td {  
+    padding-top: 2px !important;
+    padding-bottom: 2px !important; 
+    font-family: 'Segoe UI', 'Calibri', 'Cambria', 'Cochin', Georgia, Times, 'Times New Roman', serif;
+    font-size: 13px !important;
+    color: black !important;
+    font-weight: bold;
+    border: 1px solid #FFFFFF !important;     
+    overflow: hidden;
+    white-space: nowrap;
+    border-collapse: collapse !important;
+  }
+
+/* Table Detail Hover Color */
+#purpleBrowserOnDark3SIS tr:hover {
+    background-color: #8B008B !important;
+}
+/****************************** purple Theme Browser - Dark Background Ends ******************************/
+
+/****************************** green Theme Browser - Dark Background******************************/
+
+/* Table Header: Background | Font Color | */
+#greenBrowserOnDark3SIS th {
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+     background: #014421; 
+     height: auto !important; 
+    font-family: 'Segoe UI', 'Calibri', 'Cambria', 'Cochin', Georgia, Times, 'Times New Roman', serif;
+    font-size: 15px;
+    font-weight: bold;    
+    color: #ebdeec !important; 
+    border: 1px solid #FFFFFF !important;    
+    border-collapse: collapse !important;
+    white-space: nowrap;
+}
+/* Table Detail: Background Color | */
+#greenBrowserOnDark3SIS tr {     
+    background: #20B2AA !important;       
+    /* background: #A1CAF1 !important;              */
+}
+/* Table Detail Cell: Font Size | Font Color | Cell Border color */
+#greenBrowserOnDark3SIS td {  
+    padding-top: 2px !important;
+    padding-bottom: 2px !important; 
+    font-family: 'Segoe UI', 'Calibri', 'Cambria', 'Cochin', Georgia, Times, 'Times New Roman', serif;
+    font-size: 13px !important;
+    color: black !important;
+    font-weight: bold;
+    border: 1px solid #FFFFFF !important;     
+    overflow: hidden;
+    white-space: nowrap;
+    border-collapse: collapse !important;
+  }
+
+/* Table Detail Hover Color */
+#greenBrowserOnDark3SIS tr:hover {
+    background-color: #CAE00D !important;
+}
+/****************************** green Theme Browser - Dark Background Ends ******************************/
+
+/****************************** red Theme Browser - Dark Background******************************/
+
+/* Table Header: Background | Font Color | */
+#redBrowserOnDark3SIS th {
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+     background: #65000B; 
+     height: auto !important; 
+    font-family: 'Segoe UI', 'Calibri', 'Cambria', 'Cochin', Georgia, Times, 'Times New Roman', serif;
+    font-size: 15px;
+    font-weight: bold;    
+    color: #ebdeec !important; 
+    border: 1px solid #FFFFFF !important;    
+    border-collapse: collapse !important;
+    white-space: nowrap;
+}
+/* Table Detail: Background Color | */
+#redBrowserOnDark3SIS tr {     
+    background: #FFCBCB !important;       
+    /* background: #A1CAF1 !important;              */
+}
+/* Table Detail Cell: Font Size | Font Color | Cell Border color */
+#redBrowserOnDark3SIS td {  
+    padding-top: 2px !important;
+    padding-bottom: 2px !important; 
+    font-family: 'Segoe UI', 'Calibri', 'Cambria', 'Cochin', Georgia, Times, 'Times New Roman', serif;
+    font-size: 13px !important;
+    color: black !important;
+    font-weight: bold;
+    border: 1px solid #FFFFFF !important;     
+    overflow: hidden;
+    white-space: nowrap;
+    border-collapse: collapse !important;
+  }
+
+/* Table Detail Hover Color */
+#redBrowserOnDark3SIS tr:hover {
+    background-color: #EA3C53 !important;
+}
+/****************************** red Theme Browser - Dark Background Ends ******************************/

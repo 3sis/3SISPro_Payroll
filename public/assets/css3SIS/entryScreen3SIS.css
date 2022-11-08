@@ -1,0 +1,18 @@
+/* 3SIS Customized Entry Screen Look and Feel */
+
+/****************************** Blue Theme - Dark Background******************************/
+
+/* Modal Content: Background */
+.blueBackgroundModalContent3SIS {
+    background: #082567;
+}
+
+/* Card: Background */
+.blueBackgroundCard3SIS {
+    background: #436B95;
+}
+
+/* Card Header: Background */
+.blueBackgroundCardHeader3SIS {
+    background: black;
+}
