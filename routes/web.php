@@ -44,7 +44,7 @@ Route::group(['middleware'=>'auth'],function(){
 });
 
 // Route::get('/', [DashboardController::class,'index']);
-Route::get('/fastpath', [DashboardController::class,'FastPath']);
+Route::get('/fastpath', [DashboardController::class,'MNFastPath']);
 
 
 Route::post('/current_url', [DashboardController::class,'current_url']);
