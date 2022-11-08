@@ -4,15 +4,15 @@
 
 /* Modal Content: Background */
 .blueBackgroundModalContent3SIS {
-    background: #082567;
+    background: #082567 !important;
 }
 
 /* Card: Background */
 .blueBackgroundCard3SIS {
-    background: #436B95;
+    background: #436B95 !important;
 }
 
 /* Card Header: Background */
 .blueBackgroundCardHeader3SIS {
-    background: black;
+    background: black !important;
 }

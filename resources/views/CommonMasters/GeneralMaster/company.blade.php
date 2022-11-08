@@ -15,7 +15,7 @@
                     </button>
                 </div>                
                 <div class="table-responsive" style="padding-top: 5px;">
-                    <table id="purpleBrowserOnDark3SIS" class="table table-hover non-hover" style="width:100%">
+                    <table id="greenBrowserOnDark3SIS" class="table table-hover non-hover" style="width:100%">
                         <thead>
                             <tr>
                                 <!--CopyChange-->  
@@ -126,7 +126,7 @@
                                 <div class="modal-body">
                                     <div id="toggleAccordion">
                                         <!-- Shishir Style -->
-                                        <div class="card">
+                                        <div class="card blueBackgroundCard3SIS">
                                             <div class="card-header" style="background: black" id="headingOne1">
                                                 <section class="mb-0 mt-0">
                                                     <div role="menu" class="" data-toggle="collapse" data-target="#defaultAccordionOne" aria-expanded="true" aria-controls="defaultAccordionOne">
@@ -616,7 +616,7 @@
     $(document).ready(function(){
         $modalTitle = 'Company'
         
-        $('#purpleBrowserOnDark3SIS').DataTable( {
+        $('#greenBrowserOnDark3SIS').DataTable( {
             // dom: '<"row"<"col-md-12"<"row"<"col-md-6"B><"col-md-6"f> > ><"col-md-12"rt> \
             //     <"col-md-12"<"row"<"col-md-5"i><"col-md-7"p>>> >',
             buttons: {
@@ -837,7 +837,7 @@
                         $finalMessage3SIS = fnSingleLevelFinalSave(data.masterName, data.Id, data.Desc1, data.updateMode);
                         $('#FinalSaveMessage').html($finalMessage3SIS);
                         fnReinstateFormControl('0');
-                        $('#purpleBrowserOnDark3SIS').DataTable().ajax.reload();
+                        $('#greenBrowserOnDark3SIS').DataTable().ajax.reload();
                         if(data.updateMode=='Updated')
                         {
                             $('#entryModalSmall').modal('hide');
@@ -881,7 +881,7 @@
                 {
                     $finalMessage3SIS = fnSingleLevelFinalSave(data.masterName, data.Id, data.Desc1, data.updateMode);
                     $('#FinalSaveMessage').html($finalMessage3SIS);                            
-                    $('#purpleBrowserOnDark3SIS').DataTable().ajax.reload();
+                    $('#greenBrowserOnDark3SIS').DataTable().ajax.reload();
                     // $('#html-extension3SIS').DataTable().ajax.reload();
                     UniqueId = 0;
                     $('#modalZoomDeleteRecord3SIS').modal('hide');
@@ -944,7 +944,7 @@
                     data:{id:DeletedUniqueId},
                     success:function(data)
                     {                       
-                        $('#purpleBrowserOnDark3SIS').DataTable().ajax.reload();
+                        $('#greenBrowserOnDark3SIS').DataTable().ajax.reload();
                         $('#html-extension3SIS').DataTable().ajax.reload();
                         DeletedUniqueId = 0;
                         $('#modalZoomRestoreRecord3SIS').modal('hide');
