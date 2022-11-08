@@ -133,7 +133,7 @@ class CompanyController extends Controller
     {
         if (!empty($request->id)) {
             $res = [];
-            $city_date = City::where('GMCTHUniqueId', $request->id)->first();
+            $city_date = City::where('GMCTHCountryId', $request->id)->first();
             $res['stateId'] = $city_date['GMCTHStateId'];
             $res['stateDesc1'] = $city_date['GMCTHDesc1'];
             $res['countryId'] = $city_date['GMCTHCountryId'];

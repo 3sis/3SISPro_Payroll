@@ -5,7 +5,7 @@
             <ul class="navbar-item theme-brand flex-row  text-center">
                 <li class="nav-item theme-logo">
                     <a href="index.html">
-                        <img src="{{asset('public/assets/img/logo.svg')}}" class="navbar-logo" alt="logo">
+                        <img src="{{asset('assets/img/logo.svg')}}" class="navbar-logo" alt="logo">
                     </a>
                 </li>
                 <li class="nav-item theme-text">
@@ -28,13 +28,13 @@
 
                 <li class="nav-item dropdown language-dropdown">
                     <a href="javascript:void(0);" class="nav-link dropdown-toggle" id="language-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <img src="{{asset('public/assets/img/ca.png')}}" class="flag-width" alt="flag">
+                        <img src="{{asset('assets/img/ca.png')}}" class="flag-width" alt="flag">
                     </a>
                     <div class="dropdown-menu position-absolute" aria-labelledby="language-dropdown">
-                        <a class="dropdown-item d-flex" href="javascript:void(0);"><img src="{{asset('public/assets/img/de.png')}}" class="flag-width" alt="flag"> <span class="align-self-center">&nbsp;German</span></a>
-                        <a class="dropdown-item d-flex" href="javascript:void(0);"><img src="{{asset('public/assets/img/jp.png')}}" class="flag-width" alt="flag"> <span class="align-self-center">&nbsp;Japanese</span></a>
-                        <a class="dropdown-item d-flex" href="javascript:void(0);"><img src="{{asset('public/assets/img/fr.png')}}" class="flag-width" alt="flag"> <span class="align-self-center">&nbsp;French</span></a>
-                        <a class="dropdown-item d-flex" href="javascript:void(0);"><img src="{{asset('public/assets/img/ca.png')}}" class="flag-width" alt="flag"> <span class="align-self-center">&nbsp;English</span></a>
+                        <a class="dropdown-item d-flex" href="javascript:void(0);"><img src="{{asset('assets/img/de.png')}}" class="flag-width" alt="flag"> <span class="align-self-center">&nbsp;German</span></a>
+                        <a class="dropdown-item d-flex" href="javascript:void(0);"><img src="{{asset('assets/img/jp.png')}}" class="flag-width" alt="flag"> <span class="align-self-center">&nbsp;Japanese</span></a>
+                        <a class="dropdown-item d-flex" href="javascript:void(0);"><img src="{{asset('assets/img/fr.png')}}" class="flag-width" alt="flag"> <span class="align-self-center">&nbsp;French</span></a>
+                        <a class="dropdown-item d-flex" href="javascript:void(0);"><img src="{{asset('assets/img/ca.png')}}" class="flag-width" alt="flag"> <span class="align-self-center">&nbsp;English</span></a>
                     </div>
                 </li>
 
@@ -67,7 +67,7 @@
                                 <div class="">
                                     <div class="media">
                                         <div class="user-img">
-                                            <img src="{{asset('public/assets/img/profile-15.jpeg')}}" class="img-fluid mr-2" alt="avatar">
+                                            <img src="{{asset('assets/img/profile-15.jpeg')}}" class="img-fluid mr-2" alt="avatar">
                                         </div>
                                         <div class="media-body">
                                             <div class="">
@@ -75,7 +75,7 @@
                                                 <p class="msg-title">ACCOUNT UPDATE</p>
                                             </div>
                                         </div>
-                                    </div>                                    
+                                    </div>
                                 </div>
                             </a>
                             <a class="dropdown-item">
@@ -94,7 +94,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    
+
                                 </div>
                             </a>
                         </div>
@@ -157,11 +157,11 @@
                             </div>
                         </div>
                     </div>
-                    
+
                 </li>
                 <li class="nav-item dropdown user-profile-dropdown">
                     <a href="javascript:void(0);" class="nav-link dropdown-toggle user" id="userProfileDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                        <img src="{{asset('public/assets/img/profile-15.jpeg')}}" alt="avatar">
+                        <img src="{{asset('assets/img/profile-15.jpeg')}}" alt="avatar">
                     </a>
                     <div class="dropdown-menu position-absolute" aria-labelledby="userProfileDropdown">
                         <div class="">
@@ -179,7 +179,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                 </li>
 
             </ul>
@@ -230,7 +230,8 @@
       @section('js_code')
     <script type="text/javascript">
         function fastpath(_this){
-            // console.log(_this.value);
+            alert(_this);
+            console.log(_this.value);
                 $.ajax({
                 type : 'get',
                 url : "{{url('fastpath')}}",
