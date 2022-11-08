@@ -13,15 +13,15 @@
                     <button type='button' name='add' id='add_Data' class='btn btnAddRec3SIS'>Add
                         <i class="fas fa-plus fa-sm ml-1"> </i>
                     </button>
-                </div>                
+                </div>
                 <div class="table-responsive" style="padding-top: 5px;">
-                    <table id="greenBrowserOnDark3SIS" class="table table-hover non-hover" style="width:100%">
+                    <table id="landingPageBrowser3SIS" class="purpleBrowserOnDark3SIS" style="width:100%">
                         <thead>
                             <tr>
-                                <!--CopyChange-->  
+                                <!--CopyChange-->
                                 <th title="Company Id">ID</th>
                                 <th>Company Name</th>
-                                <th>Nick Name</th>                                    
+                                <th>Nick Name</th>
                                 <th>Tag Line</th>
                                 <th>Action</th>
                                 <th style="visibility: hidden;">Desc2</th>
@@ -30,22 +30,22 @@
                                 <th style="visibility: hidden;">Updated</th>
                                 <th style="visibility: hidden;">Unique Id</th>
                             </tr>
-                        </thead> 
+                        </thead>
                     </table>
                 </div>
                 <!-- start undeletemodal -->
-                <div id='dataTableModalSmall' class='modal fade  register-modal' role='dialog' 
-                    aria-labelledby="registerModalLabel" aria-hidden="true" style='margin-top:40px' 
+                <div id='dataTableModalSmall' class='modal fade  register-modal' role='dialog'
+                    aria-labelledby="registerModalLabel" aria-hidden="true" style='margin-top:40px'
                     data-backdrop="static">
                     <div class='modal-dialog modal-dialog-centered modal-lg'role="document">
-                        <div class='modal-content'>                              
+                        <div class='modal-content'>
                             <div class="modal-header" id="registerModalLabel">
                                 <h4 class="modal-title"></h4>
                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" 
-                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" 
-                                    stroke-linecap="round" stroke-linejoin="round" 
-                                    class="feather feather-x text-danger"><line x1="18" y1="6" x2="6" y2="18">                                            
+                                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round"
+                                    class="feather feather-x text-danger"><line x1="18" y1="6" x2="6" y2="18">
                                     </line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button>
                             </div>
                             <!--CopyChange-->
@@ -54,14 +54,14 @@
                                             <div class="table-responsive">
                                                 <table id="html-extension3SIS" class="table table-hover non-hover" style="width:100%">
                                                     <thead>
-                                                        <tr>                                                                
+                                                        <tr>
                                                             <th title="Company Master">ID</th>
                                                             <th>Company Name</th>
                                                             <th>Desc1</th>
                                                             <th>Action</th>
                                                             <th style="visibility: hidden;">Unique Id</th>
                                                         </tr>
-                                                    </thead>   
+                                                    </thead>
                                                 </table>
                                             </div>
                                         </div>
@@ -69,18 +69,18 @@
                         </div>
                     </div>
                 </div>
-               <div id='dataTableModalSmall' class='modal fade  register-modal' role='dialog' 
-                    aria-labelledby="registerModalLabel" aria-hidden="true" style='margin-top:40px' 
+               <div id='dataTableModalSmall' class='modal fade  register-modal' role='dialog'
+                    aria-labelledby="registerModalLabel" aria-hidden="true" style='margin-top:40px'
                     data-backdrop="static">
                     <div class='modal-dialog modal-dialog-centered modal-lg'role="document">
-                        <div class='modal-content'>                              
+                        <div class='modal-content'>
                             <div class="modal-header" id="registerModalLabel">
                                 <h4 class="modal-title"></h4>
                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" 
-                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" 
-                                    stroke-linecap="round" stroke-linejoin="round" 
-                                    class="feather feather-x text-danger"><line x1="18" y1="6" x2="6" y2="18">                                            
+                                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round"
+                                    class="feather feather-x text-danger"><line x1="18" y1="6" x2="6" y2="18">
                                     </line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button>
                             </div>
                             <!--CopyChange-->
@@ -89,14 +89,14 @@
                                             <div class="table-responsive">
                                                 <table id="html-extension3SIS" class="table table-hover non-hover" style="width:100%">
                                                     <thead>
-                                                        <tr>                                                                
+                                                        <tr>
                                                             <th title="Company Master">ID</th>
                                                             <th>Company Name</th>
                                                             <th>Desc1</th>
                                                             <th>Action</th>
                                                             <th style="visibility: hidden;">Unique Id</th>
                                                         </tr>
-                                                    </thead>   
+                                                    </thead>
                                                 </table>
                                             </div>
                                         </div>
@@ -105,18 +105,18 @@
                     </div>
                 </div>
                 <!-- end undelete modal -->
-                <div id="entryModalSmall" class="modal fade UpdateModalBox3SIS" data-backdrop="static" 
+                <div id="entryModalSmall" class="modal fade UpdateModalBox3SIS" data-backdrop="static"
                     data-keyboard="false" role="dialog" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered 3SISPro-modal-dialog modal-xl" role="document">
                         <!-- Shishir Style -->
-                        <div class='modal-content blueBackgroundModalContent3SIS'>                              
+                        <div class='modal-content blueBackgroundModalContent3SIS'>
                             <div class="modal-header" id="registerModalLabel">
                                 <h4 class="modal-title text-light">Master</h4>
                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" 
-                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" 
-                                    stroke-linecap="round" stroke-linejoin="round" 
-                                    class="feather feather-x text-danger"><line x1="18" y1="6" x2="6" y2="18">                                            
+                                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round"
+                                    class="feather feather-x text-danger"><line x1="18" y1="6" x2="6" y2="18">
                                     </line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button>
                             </div>
                             <!--CopyChange-->
@@ -134,30 +134,30 @@
                                                     </div>
                                                 </section>
                                             </div>
-                                            <div id="defaultAccordionOne" class="collapse show" aria-labelledby="headingOne1" 
+                                            <div id="defaultAccordionOne" class="collapse show" aria-labelledby="headingOne1"
                                                 data-parent="#toggleAccordion" style="">
                                                 <div class="card-body">
-                                                        <!-- Hidden Fields -->  
+                                                        <!-- Hidden Fields -->
                                                         <div class='form-group mb-0'>
-                                                            <input type="hidden" name='GMCOHUniqueId' id='GMCOHUniqueId' 
-                                                                class='form-control'>                                                  
+                                                            <input type="hidden" name='GMCOHUniqueId' id='GMCOHUniqueId'
+                                                                class='form-control'>
                                                         </div>
                                                         <!-- Id, Description and Nick Name -->
                                                         <div class="row mt-0">
                                                             <div class="col-md-4">
-                                                                <div class='form-group'>                                                
-                                                                    <label>Company Id</label> 
-                                                                    <span class="error-text GMCOHCompanyId_error text-danger" 
+                                                                <div class='form-group'>
+                                                                    <label>Company Id</label>
+                                                                    <span class="error-text GMCOHCompanyId_error text-danger"
                                                                         style='float:right;'></span>
-                                                                    <input type="text"  name='GMCOHCompanyId' id='GMCOHCompanyId' 
-                                                                        class='form-control few-options' maxlength="10" 
+                                                                    <input type="text"  name='GMCOHCompanyId' id='GMCOHCompanyId'
+                                                                        class='form-control few-options' maxlength="10"
                                                                         placeholder="Company Id" style='opacity:1'>
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-6">
-                                                                <div class='form-group'>                                                
-                                                                    <label>Name</label> 
-                                                                    <span class="error-text GMCOHDesc1_error text-danger" 
+                                                                <div class='form-group'>
+                                                                    <label>Name</label>
+                                                                    <span class="error-text GMCOHDesc1_error text-danger"
                                                                         style='float:right;'></span>
                                                                     <input type="text" name='GMCOHDesc1' id="GMCOHDesc1"  maxlength="100"
                                                                         class="form-control few-options" placeholder="Company Name">
@@ -165,7 +165,7 @@
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2">
-                                                                <div class='form-group'>                                                
+                                                                <div class='form-group'>
                                                                     <label>Nick Name</label>
                                                                     <input type="text" name='GMCOHNickName' id="GMCOHNickName"  maxlength="50"
                                                                         class="form-control few-options" placeholder="Short Name">
@@ -175,48 +175,48 @@
                                                         <!-- Descriptin2, Tag Line and BI -->
                                                         <div class="row mt-0">
                                                             <div class="col-md-4">
-                                                                <div class='form-group'>                                                
-                                                                    <label>Description2</label>  
-                                                                    <textarea name='GMCOHDesc2' id='GMCOHDesc2' class='form-control few-options' 
-                                                                    maxlength="200" name="alloptions" id="alloptions1" placeholder="Company Description2" 
-                                                                    aria-label="With textarea" 
+                                                                <div class='form-group'>
+                                                                    <label>Description2</label>
+                                                                    <textarea name='GMCOHDesc2' id='GMCOHDesc2' class='form-control few-options'
+                                                                    maxlength="200" name="alloptions" id="alloptions1" placeholder="Company Description2"
+                                                                    aria-label="With textarea"
                                                                     style='border-color: rgb(102, 175, 233); outline: 0px'></textarea>
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-4">
                                                                 <div class='form-group '>
                                                                     <label>Tag Line</label>
-                                                                    <input type="text" name='GMCOHTagLine' id='GMCOHTagLine' 
+                                                                    <input type="text" name='GMCOHTagLine' id='GMCOHTagLine'
                                                                         class='form-control few-options' maxlength="100" placeholder="Tag Line">
                                                                 </div>
-                                                            </div>     
+                                                            </div>
                                                             <div class="col-md-4">
                                                                 <div class='form-group '>
                                                                     <label>BI Desc</label>
-                                                                    <input type="text" name='GMCOHBiDesc' id='GMCOHBiDesc' 
+                                                                    <input type="text" name='GMCOHBiDesc' id='GMCOHBiDesc'
                                                                         class='form-control few-options'maxlength="100" placeholder="BI Description">
                                                                 </div>
-                                                            </div>                                                            
+                                                            </div>
                                                         </div>
                                                         <!-- Dropdown for Currency, Qty & Value Decimal  -->
                                                         <div class="row mt-0">
                                                             <div class="col-md-4">
                                                                 <div class='form-group'>
-                                                                    <label>Currency Id</label>                                                
-                                                                    <span class="error-text currenyId_error text-danger" 
+                                                                    <label>Currency Id</label>
+                                                                    <span class="error-text currenyId_error text-danger"
                                                                         style='float:right;'></span>
                                                                     <select id='currenyId' name = 'currenyId' style='width: 100%;' class="form-control select2">
                                                                         <option value=''>-- Select Currency Id --</option>
                                                                         @foreach($currency_list as $currency)
                                                                         <option value='{{$currency->GMCRHUniqueId}}'>{{$currency->GMCRHCurrencyId}}</option>
                                                                         @endforeach
-                                                                    </select>                                                
+                                                                    </select>
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-4">
                                                                 <div class='form-group'>
-                                                                    <label>Quantity Decimals</label>                                                
-                                                                    <span class="error-text quantityId_error text-danger" 
+                                                                    <label>Quantity Decimals</label>
+                                                                    <span class="error-text quantityId_error text-danger"
                                                                         style='float:right;'></span>
                                                                     <select id='quantityId' name = 'quantityId' style='width: 100%;'>
                                                                             <option value='0'>0</option>
@@ -225,13 +225,13 @@
                                                                             <option value='3'>3</option>
                                                                             <option value='4'>4</option>
                                                                             <option value='5'>5</option>
-                                                                    </select>                                                
+                                                                    </select>
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-4">
                                                                 <div class='form-group'>
-                                                                    <label>Value Decimals</label>                                                
-                                                                    <span class="error-text valueId_error text-danger" 
+                                                                    <label>Value Decimals</label>
+                                                                    <span class="error-text valueId_error text-danger"
                                                                         style='float:right;'></span>
                                                                     <select id='valueId' name = 'valueId' style='width: 100%;'>
                                                                     <option value='0'>0</option>
@@ -240,37 +240,37 @@
                                                                             <option value='3'>3</option>
                                                                             <option value='4'>4</option>
                                                                             <option value='5'>5</option>
-                                                                    </select>                                                
+                                                                    </select>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <!-- Landline, Mobile, Email and Website -->
                                                         <div class="row mt-0">
                                                             <div class="col-md-3">
-                                                                <div class='form-group'>                                                
-                                                                    <label>Land Line</label> 
-                                                                    <input type="text" name='GMCOHLandLine' id='GMCOHLandLine' 
+                                                                <div class='form-group'>
+                                                                    <label>Land Line</label>
+                                                                    <input type="text" name='GMCOHLandLine' id='GMCOHLandLine'
                                                                         class='form-control few-options'maxlength="50"  placeholder="Land Line No.">
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-3">
                                                                 <div class='form-group '>
                                                                     <label>Mobile No.</label>
-                                                                    <input type="text" name='GMCOHMobileNo' id='GMCOHMobileNo' 
+                                                                    <input type="text" name='GMCOHMobileNo' id='GMCOHMobileNo'
                                                                         class='form-control few-options'maxlength="50"  placeholder="Mobile No.">
                                                                 </div>
-                                                            </div>     
+                                                            </div>
                                                             <div class="col-md-3">
                                                                 <div class='form-group '>
                                                                     <label>Emial Id</label>
-                                                                    <input type="text" name='GMCOHEmail' id='GMCOHEmail' 
+                                                                    <input type="text" name='GMCOHEmail' id='GMCOHEmail'
                                                                         class='form-control few-options'maxlength="100"  placeholder="Email Id">
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-3">
                                                                 <div class='form-group '>
                                                                     <label>Web Site</label>
-                                                                    <input type="text" name='GMCOHWebsite' id='GMCOHWebsite' 
+                                                                    <input type="text" name='GMCOHWebsite' id='GMCOHWebsite'
                                                                         class='form-control few-options'maxlength="100"  placeholder="Web Site">
                                                                 </div>
                                                             </div>
@@ -295,37 +295,37 @@
                                                     <!-- Address1, 2, 3 -->
                                                     <div class="form-group">
                                                         <label>Address</label>
-                                                        <input type="text" name="GMCOHAddress1" id="GMCOHAddress1" 
+                                                        <input type="text" name="GMCOHAddress1" id="GMCOHAddress1"
                                                         class='form-control few-options' maxlength="200" placeholder="Address 1"/>
                                                     </div>
                                                     <div class="form-group">
-                                                        <input type="text" name="GMCOHAddress2" id="GMCOHAddress2" 
+                                                        <input type="text" name="GMCOHAddress2" id="GMCOHAddress2"
                                                         class='form-control few-options' maxlength="200" placeholder="Address 2"/>
                                                     </div>
                                                     <div class="form-group">
-                                                        <input type="text" name="GMCOHAddress3" id="GMCOHAddress3" 
+                                                        <input type="text" name="GMCOHAddress3" id="GMCOHAddress3"
                                                         class='form-control few-options' maxlength="200" placeholder="Address 3"/>
                                                     </div>
                                                     <!-- City, State, Country & Pin Code -->
                                                     <div class="row mt-0">
                                                         <div class="col-md-3">
                                                             <div class='form-group'>
-                                                                <label>City</label>                                                
-                                                                <span class="error-text cityId_error text-danger" 
+                                                                <label>City</label>
+                                                                <span class="error-text cityId_error text-danger"
                                                                     style='float:right;'></span>
                                                                 <select id='cityId' name = 'cityId' style='width: 100%;'>
                                                                     <option value=''>-- Select City Id --</option>
                                                                     @foreach($city_list as $city)
                                                                 <option value='{{$city->GMCTHCityId}}'>{{$city->GMCTHDesc1}}</option>
                                                                 @endforeach
-                                                                </select>                                                
+                                                                </select>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-3">
                                                             <div class="form-group">
                                                                 <label>State</label>
                                                                 <input type="hidden" name="GMCOHStateId" id="GMCOHStateId">
-                                                                <input type="text" name="stateDesc1" id="stateDesc1" 
+                                                                <input type="text" name="stateDesc1" id="stateDesc1"
                                                                 class="form-control" readonly/>
                                                             </div>
                                                         </div>
@@ -333,18 +333,18 @@
                                                             <div class="form-group">
                                                                 <label>Country</label>
                                                                 <input type="hidden" name="GMCOHCountryId" id="GMCOHCountryId">
-                                                                <input type="text" name="countryDesc1" id="countryDesc1" 
+                                                                <input type="text" name="countryDesc1" id="countryDesc1"
                                                                 class="form-control" readonly/>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-3">
                                                             <div class="form-group">
                                                                 <label>Pin Code</label>
-                                                                <input type="text" name="GMCOHPinCode" id="GMCOHPinCode" 
+                                                                <input type="text" name="GMCOHPinCode" id="GMCOHPinCode"
                                                                 class='form-control few-options' maxlength="50" placeholder="Pin Code"/>
                                                             </div>
                                                         </div>
-                                                    </div>                                                        
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -369,7 +369,7 @@
                                                             <div class="col-md-12">
                                                                 <div class="row mt-0">
                                                                     <div class='form-group mb-0'>
-                                                                        <label style='color:#ffc107'>Bank1</label>        
+                                                                        <label style='color:#ffc107'>Bank1</label>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -382,7 +382,7 @@
                                                                                 @foreach($bank1_list as $bank1)
                                                                             <option value='{{$bank1->BMBNHUniqueId}}'>{{$bank1->BMBNHDesc1}}</option>
                                                                             @endforeach
-                                                                        </select>                                                
+                                                                        </select>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -391,15 +391,15 @@
                                                                     <div class='form-group'>
                                                                         <label style='color:#ffc107'>Bank</label>
                                                                         <input type="hidden" name="GMCOHBankId1" id="GMCOHBankId1">
-                                                                        <input type="text" name="bankName1" id="bankName1" 
-                                                                            class="form-control" readonly/>                                                
+                                                                        <input type="text" name="bankName1" id="bankName1"
+                                                                            class="form-control" readonly/>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-6">
                                                                     <div class='form-group'>
                                                                         <label style='color:#ffc107'>IFS Code</label>
-                                                                        <input type="text" name="ifsCode1" id="ifsCode1" 
-                                                                        class="form-control" readonly/>                                              
+                                                                        <input type="text" name="ifsCode1" id="ifsCode1"
+                                                                        class="form-control" readonly/>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -408,14 +408,14 @@
                                                                     <div class='form-group'>
                                                                         <label style='color:#ffc107'>Acct.Name</label>
                                                                         <input type="text" name="GMCOHBankAcName1" id="GMCOHBankAcName1" maxlength="100"
-                                                                        class="form-control few-options" placeholder="Acct.Name">                                             
+                                                                        class="form-control few-options" placeholder="Acct.Name">
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-6">
                                                                     <div class='form-group'>
                                                                         <label style='color:#ffc107'>Acct.No.</label>
-                                                                        <input type="text" name="GMCOHBankAccNo1" id="GMCOHBankAccNo1" maxlength="100" 
-                                                                        class="form-control few-options" placeholder="Acct.No.">                                             
+                                                                        <input type="text" name="GMCOHBankAccNo1" id="GMCOHBankAccNo1" maxlength="100"
+                                                                        class="form-control few-options" placeholder="Acct.No.">
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -425,7 +425,7 @@
                                                             <div class="col-md-12">
                                                                 <div class="row mt-0">
                                                                     <div class='form-group mb-0'>
-                                                                        <label style='color:#20c997'>Bank2</label>        
+                                                                        <label style='color:#20c997'>Bank2</label>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -438,7 +438,7 @@
                                                                                 @foreach($bank2_list as $bank2)
                                                                             <option value='{{$bank2->BMBRHUniqueId}}'>{{$bank2->BMBRHDesc1}}</option>
                                                                             @endforeach
-                                                                        </select>                                                
+                                                                        </select>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -447,15 +447,15 @@
                                                                     <div class='form-group'>
                                                                         <label style='color:#20c997'>Bank</label>
                                                                         <input type="hidden" name="GMCOHBankId2" id="GMCOHBankId2">
-                                                                        <input type="text" name="bankName2" id="bankName2" 
-                                                                            class="form-control" readonly/>                                                
+                                                                        <input type="text" name="bankName2" id="bankName2"
+                                                                            class="form-control" readonly/>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-6">
                                                                     <div class='form-group'>
                                                                         <label style='color:#20c997'>IFS Code</label>
-                                                                        <input type="text" name="ifsCode2" id="ifsCode2" 
-                                                                        class="form-control" readonly/>                                              
+                                                                        <input type="text" name="ifsCode2" id="ifsCode2"
+                                                                        class="form-control" readonly/>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -464,14 +464,14 @@
                                                                     <div class='form-group'>
                                                                         <label style='color:#20c997'>Acct.Name</label>
                                                                         <input type="text" name="GMCOHBankAcName2" id="GMCOHBankAcName2" maxlength="100"
-                                                                        class="form-control few-options" placeholder="Acct.Name">                                             
+                                                                        class="form-control few-options" placeholder="Acct.Name">
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-6">
                                                                     <div class='form-group'>
                                                                         <label style='color:#20c997'>Acct.No.</label>
-                                                                        <input type="text" name="GMCOHBankAccNo2" id="GMCOHBankAccNo2" maxlength="100" 
-                                                                        class="form-control few-options" placeholder="Acct.No.">                                             
+                                                                        <input type="text" name="GMCOHBankAccNo2" id="GMCOHBankAccNo2" maxlength="100"
+                                                                        class="form-control few-options" placeholder="Acct.No.">
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -502,52 +502,52 @@
                                                         <div class="col-md-6">
                                                             <div class='form-group '>
                                                                 <label>GST No.</label>
-                                                                <input type="text" name='GMCOHGSTNo' id='GMCOHGSTNo' 
+                                                                <input type="text" name='GMCOHGSTNo' id='GMCOHGSTNo'
                                                                     class='form-control few-options' maxlength="100" placeholder="GST No.">
                                                             </div>
-                                                        </div>     
+                                                        </div>
                                                         <div class="col-md-6">
                                                             <div class='form-group '>
                                                                 <label>PAN No.</label>
-                                                                <input type="text" name='GMCOHPANNo' id='GMCOHPANNo' 
+                                                                <input type="text" name='GMCOHPANNo' id='GMCOHPANNo'
                                                                     class='form-control few-options'maxlength="100" placeholder="PAN No.">
                                                             </div>
-                                                        </div>                                                            
+                                                        </div>
                                                     </div>
                                                     <!-- CIN No and Establishment Date -->
                                                     <div class="row mt-0">
                                                         <div class="col-md-6">
                                                             <div class='form-group '>
                                                                 <label>CIN No.</label>
-                                                                <input type="text" name='GMCOHCINNo' id='GMCOHCINNo' 
+                                                                <input type="text" name='GMCOHCINNo' id='GMCOHCINNo'
                                                                     class='form-control few-options' maxlength="100" placeholder="CIN No.">
                                                             </div>
-                                                        </div>     
+                                                        </div>
                                                         <div class="col-md-6">
                                                             <div class='form-group '>
                                                                 <label>Establishment Date</label>
-                                                                <input type="date" name='GMCOHESTDate' id='GMCOHESTDate' 
+                                                                <input type="date" name='GMCOHESTDate' id='GMCOHESTDate'
                                                                     class='form-control'>
                                                             </div>
-                                                        </div>                                                            
+                                                        </div>
                                                     </div>
                                                     <!-- Company Logo and Folder -->
                                                     <div class="row mt-0">
                                                         <div class="col-md-6">
                                                             <div class='form-group '>
                                                                 <label>Folder Name</label>
-                                                                <input type="text" name='GMCOHFolderName' id='GMCOHFolderName' 
+                                                                <input type="text" name='GMCOHFolderName' id='GMCOHFolderName'
                                                                     class='form-control few-options' maxlength="200" placeholder="Folder Name">
                                                             </div>
-                                                        </div>     
+                                                        </div>
                                                         <div class="col-md-6">
                                                             <div class='form-group '>
                                                                 <label>Company Logo</label>
-                                                                <input type="text" name='GMCOHImageFileName' id='GMCOHImageFileName' 
+                                                                <input type="text" name='GMCOHImageFileName' id='GMCOHImageFileName'
                                                                 class='form-control few-options' maxlength="500" placeholder="Folder Name">
                                                             </div>
-                                                        </div>                                                            
-                                                    </div>                                                            
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -569,19 +569,19 @@
                                                 <div class="media-body">
                                                     <div class="form-group">
                                                         <label> User</label>
-                                                        <input type="text" name="GMCOHUser" id="GMCOHUser" 
+                                                        <input type="text" name="GMCOHUser" id="GMCOHUser"
                                                         class="form-control col-sm-6" readonly/>
                                                     </div>
                                                     <div class="form-group">
                                                         <label> Created Date</label>
-                                                        <input type="date" name="GMCOHLastCreated" id="GMCOHLastCreated" 
+                                                        <input type="date" name="GMCOHLastCreated" id="GMCOHLastCreated"
                                                         class="form-control col-sm-6" readonly/>
                                                     </div>
                                                     <div class="form-group">
                                                         <label> Updated Date</label>
-                                                        <input type="date" name="GMCOHLastUpdated" id="GMCOHLastUpdated" 
+                                                        <input type="date" name="GMCOHLastUpdated" id="GMCOHLastUpdated"
                                                         class="form-control col-sm-6" readonly />
-                                                    </div>                                                        
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -593,15 +593,15 @@
                                 </div>
                                 <div class='modal-footer'>
                                     <!--To display success messages-->
-                                    <span id='form_output' style='float:left; padding-left:0px' ></span> 
+                                    <span id='form_output' style='float:left; padding-left:0px' ></span>
                                     <input type="hidden" name='button_action' id='button_action' value='insert'>
-                                    <input type="submit" name='submit' id='action' value='Add' 
+                                    <input type="submit" name='submit' id='action' value='Add'
                                         class='btn btn-outline-success mb-2'>
                                 </div>
                             </form>
                         </div>
                     </div>
-            
+
                 </div>
                 @include('commonViews3SIS.modalCommon3SIS')
             </div>
@@ -612,11 +612,11 @@
 </div>
 @endsection
 @section('js_code')
-<script>        
+<script>
     $(document).ready(function(){
         $modalTitle = 'Company'
-        
-        $('#greenBrowserOnDark3SIS').DataTable( {
+
+        $('#landingPageBrowser3SIS').DataTable( {
             // dom: '<"row"<"col-md-12"<"row"<"col-md-6"B><"col-md-6"f> > ><"col-md-12"rt> \
             //     <"col-md-12"<"row"<"col-md-5"i><"col-md-7"p>>> >',
             buttons: {
@@ -644,14 +644,14 @@
             order: [ 8, "desc" ],
             processing: true,
             serverSide: true,
-            // CopyChange                    
+            // CopyChange
             "ajax": "{{ route('company.browserData')}}",
             "columns":[
             // CopyChange
             {data: "GMCOHCompanyId"},
             {data: "GMCOHDesc1"},
-            {data: "GMCOHNickName"},                    
-            {data: "GMCOHTagLine"},                    
+            {data: "GMCOHNickName"},
+            {data: "GMCOHTagLine"},
             {data: "action", orderable:false, searchable: false},
             {data: "GMCOHDesc2", "visible": false},
             {data: "GMCOHBiDesc", "visible": false},
@@ -665,21 +665,21 @@
                 { "width": "25%", "targets": 2 },
                 { "width": "25%", "targets": 3 },
                 { "width": "15%", "targets": 4 }
-            ]      
+            ]
         });
 
-     }); 
-    $('#add_Data').click(function(){                    
+     });
+    $('#add_Data').click(function(){
         $("#GMCOHCompanyId").attr("readonly", false);
         $('#currenyId').val('').change();
         fnReinstateFormControl('0');
     });
     // When edit button is pushed
     $(document).on('click', '.edit', function(){
-            
+
         var id = $(this).attr('id');
 
-                // $('#GMCOHUniqueId').val();                     
+                // $('#GMCOHUniqueId').val();
                 // $('#GMCOHCompanyId').val();
                 // $('#GMCOHDesc1').val();
                 // $('#GMCOHDesc2').val();
@@ -720,8 +720,8 @@
                 // $('#GMCOHBankAccNo2').val();
                 // $('#GMCOHBankAcName2').val();
                 // // User Info
-                // $('#GMCOHUser').val();                        
-                // $('#GMCOHLastCreated').val(lastCreated);                        
+                // $('#GMCOHUser').val();
+                // $('#GMCOHLastCreated').val(lastCreated);
                 // $('#GMCOHLastUpdated').val(lastUpdated);
 
         $.ajax({
@@ -731,12 +731,12 @@
             data: {id:id},
             dataType: 'json',
             success: function(data)
-            { 
+            {
                 // var lastCreated = formattedDate(new Date(data.GMCOHLastCreated));
                 // var lastUpdated = formattedDate(new Date(data.GMCOHLastUpdated));
                 // var establishmentDte = formattedDate(new Date(data.GMCOHESTDate));
                 // General Info
-                $('#GMCOHUniqueId').val(data.GMCOHUniqueId);                     
+                $('#GMCOHUniqueId').val(data.GMCOHUniqueId);
                 $('#GMCOHCompanyId').val(data.GMCOHCompanyId);
                 $('#GMCOHDesc1').val(data.GMCOHDesc1);
                 $('#GMCOHDesc2').val(data.GMCOHDesc2);
@@ -752,7 +752,7 @@
                 $('#GMCOHWebsite').val(data.GMCOHWebsite);
 
 
-                // How to pull Id in dropdown in Edit Mode - @Krishna 
+                // How to pull Id in dropdown in Edit Mode - @Krishna
 
                 $('#currenyId').val(data.GMCOHCurrenyId).change();
                 $('#cityId').val(data.GMCOHCityId).change();
@@ -763,7 +763,7 @@
                 // $('#valueId').val(data.GMCOHDecimalPositionValue).change();
                 // $('#branchId1').val(data.GMCOHBranchId1).change();
                 // $('#branchId2').val(data.GMCOHBranchId2).change();
-                
+
                 // $('#bankName1').val(response.bankDesc1);
                 // $('#ifsCode1').val(response.ifsCode);
                 // $('#GMCOHBankId1').val(response.bankId);
@@ -799,10 +799,10 @@
                 $('#GMCOHBankAccNo2').val(data.GMCOHBankAccNo2);
                 $('#GMCOHBankAcName2').val(data.GMCOHBankAcName2);
                 // User Info
-                $('#GMCOHUser').val(data.GMCOHUser);                        
-                // $('#GMCOHLastCreated').val(lastCreated);                        
-                // $('#GMCOHLastUpdated').val(lastUpdated);                         
-                $("#GMCOHCompanyId").attr("readonly", true); 
+                $('#GMCOHUser').val(data.GMCOHUser);
+                // $('#GMCOHLastCreated').val(lastCreated);
+                // $('#GMCOHLastUpdated').val(lastUpdated);
+                $("#GMCOHCompanyId").attr("readonly", true);
                 $('#entryModalSmall').modal('show');
 
                 fnReinstateFormControl('1');
@@ -812,7 +812,7 @@
     });
     // Edit Ends
     // When submit button is pushed
-    $('#singleLevelDataEntryForm').on('submit', function(event){               
+    $('#singleLevelDataEntryForm').on('submit', function(event){
             event.preventDefault();
             $.ajax({
                 url: $(this).attr('action'),
@@ -833,11 +833,11 @@
                             $('#' +prefix).css('border-color', '#dc3545');
                         });
                     }else
-                    { 
+                    {
                         $finalMessage3SIS = fnSingleLevelFinalSave(data.masterName, data.Id, data.Desc1, data.updateMode);
                         $('#FinalSaveMessage').html($finalMessage3SIS);
                         fnReinstateFormControl('0');
-                        $('#greenBrowserOnDark3SIS').DataTable().ajax.reload();
+                        $('#landingPageBrowser3SIS').DataTable().ajax.reload();
                         if(data.updateMode=='Updated')
                         {
                             $('#entryModalSmall').modal('hide');
@@ -852,7 +852,7 @@
             })
         });
         // Submit Ends
-    // Submit Ends 
+    // Submit Ends
     // When delete button is pushed
     $(document).on('click', '.delete', function(){
         var UniqueId = $(this).attr('id');
@@ -864,9 +864,9 @@
             dataType: 'json',
             success: function(data)
             {
-                $deleteMessage3SIS = fnSingleLevelDeleteConfirmation($modalTitle, data.GMCOHCompanyId, '');   
+                $deleteMessage3SIS = fnSingleLevelDeleteConfirmation($modalTitle, data.GMCOHCompanyId, '');
                 $('#DeleteRecord').html($deleteMessage3SIS);
-                $('#modalZoomDeleteRecord3SIS').modal('show');                   
+                $('#modalZoomDeleteRecord3SIS').modal('show');
             }
         });
         // Fetch Record Ends
@@ -880,22 +880,22 @@
                 success:function(data)
                 {
                     $finalMessage3SIS = fnSingleLevelFinalSave(data.masterName, data.Id, data.Desc1, data.updateMode);
-                    $('#FinalSaveMessage').html($finalMessage3SIS);                            
-                    $('#greenBrowserOnDark3SIS').DataTable().ajax.reload();
+                    $('#FinalSaveMessage').html($finalMessage3SIS);
+                    $('#landingPageBrowser3SIS').DataTable().ajax.reload();
                     // $('#html-extension3SIS').DataTable().ajax.reload();
                     UniqueId = 0;
                     $('#modalZoomDeleteRecord3SIS').modal('hide');
                     $('#modalZoomFinalSave3SIS').modal('show');
                 }
             })
-        }); 
+        });
         $("#modalZoomDeleteRecord3SIS").on("hide.bs.modal", function () {
             UniqueId = 0;
-        });                 
-    }); 
+        });
+    });
     // Delete Ends
     // Whed undo button is pushed
-    $('#Undelete_Data').click(function(){     
+    $('#Undelete_Data').click(function(){
         $('#html-extension3SIS').DataTable( {
         stripeClasses: [],
         pageLength: 6,
@@ -903,8 +903,8 @@
         order: [[ 1, "desc" ]],
         processing: true,
         serverSide: true,
-        destroy: true,                    
-        // CopyChange                    
+        destroy: true,
+        // CopyChange
         "ajax": "{{ route('company.browserDeletedRecords')}}",
         "columns":[
             // CopyChange
@@ -929,10 +929,10 @@
                 dataType: 'json',
                 success: function(data)
                 {
-                    $restoreMessage3SIS = fnSingleLevelRestoreConfirmation($modalTitle, data.GMCOHCompanyId, '');   
+                    $restoreMessage3SIS = fnSingleLevelRestoreConfirmation($modalTitle, data.GMCOHCompanyId, '');
                     $('#RestoreRecord').html($restoreMessage3SIS);
-                    $('#modalZoomRestoreRecord3SIS').modal('show');  
-                    $('#modalZoomRestoreRecord3SIS').modal('hide');                    
+                    $('#modalZoomRestoreRecord3SIS').modal('show');
+                    $('#modalZoomRestoreRecord3SIS').modal('hide');
                 }
             });
             // Fetch Record Ends
@@ -943,19 +943,19 @@
                     mehtod:"get",
                     data:{id:DeletedUniqueId},
                     success:function(data)
-                    {                       
-                        $('#greenBrowserOnDark3SIS').DataTable().ajax.reload();
+                    {
+                        $('#landingPageBrowser3SIS').DataTable().ajax.reload();
                         $('#html-extension3SIS').DataTable().ajax.reload();
                         DeletedUniqueId = 0;
                         $('#modalZoomRestoreRecord3SIS').modal('hide');
                         // $('#dataTableModalSmall').modal('hide');
                     }
                 })
-            }); 
+            });
             $("#modalZoomRestoreRecord3SIS").on("hide.bs.modal", function () {
                 DeletedUniqueId = 0;
-            });                
-        }); 
+            });
+        });
         // restore Ends
 
 $('#cityId').change(function(){
