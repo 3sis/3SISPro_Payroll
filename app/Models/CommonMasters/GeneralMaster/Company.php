@@ -11,7 +11,7 @@ class Company extends Model
     public $timestamps = false;
     protected $table = 't05901l01';
     protected $primaryKey = 'GMCOHUniqueId';
-    protected $fillable = 
+    protected $fillable =
         [
             'GMCOHUniqueId',
             'GMCOHCompId',
@@ -66,7 +66,7 @@ class Company extends Model
             'GMCOHUser',
             'GMCOHLastCreated',
             'GMCOHLastUpdated',
-            'GMCOHDeletedAt' 
+            'GMCOHDeletedAt'
         ];
         protected $casts = [
             'GMCOHLastCreated'  => 'datetime:d/m/Y',

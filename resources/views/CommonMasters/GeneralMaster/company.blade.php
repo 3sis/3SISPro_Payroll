@@ -302,7 +302,7 @@
                                                         </div>
                                                         <div class="col-md-3">
                                                             <div class='form-group '>
-                                                                <label>Emial Id</label>
+                                                                <label>Email Id</label>
                                                                 <input type="text" name='GMCOHEmail'
                                                                     id='GMCOHEmail'
                                                                     class='form-control few-options'maxlength="100"

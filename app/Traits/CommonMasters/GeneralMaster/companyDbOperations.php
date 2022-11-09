@@ -5,15 +5,15 @@ use Auth;
 use Illuminate\Support\Carbon;
 use App\Models\CommonMasters\GeneralMaster\Company;
 // GICM : Geographic Info - Company Master
-trait companyDbOperations {        
-     
-     public function gmcmBrowserDataTrait() 
-     { 
+trait companyDbOperations {
+
+     public function gmcmBrowserDataTrait()
+     {
          return $browserData = Company::where('GMCOHMarkForDeletion', 0)
          ->get([
-            'GMCOHUniqueId', 
+            'GMCOHUniqueId',
             'GMCOHCompanyId',
-            'GMCOHDesc1', 
+            'GMCOHDesc1',
             'GMCOHNickName',
             'GMCOHTagLine',
             'GMCOHDesc2',
@@ -25,13 +25,13 @@ trait companyDbOperations {
      public function gmcmAddUpdateTrait($request)
      {
         if($request->get('button_action') == 'insert') {
-            $Company = new Company;                
-            $Company->GMCOHCompanyId    =   $request->GMCOHCompanyId;            
+            $Company = new Company;
+            $Company->GMCOHCompanyId    =   $request->GMCOHCompanyId;
             $Company->GMCOHLastCreated  =   Carbon::now();
         }elseif($request->get('button_action') == 'update'){
             $Company = Company::find($request->get('GMCOHUniqueId'));
         }
-        // General Info 
+        // General Info
         $Company->GMCOHDesc1                =   $request->GMCOHDesc1;
         $Company->GMCOHDesc2                =   $request->GMCOHDesc2;
         $Company->GMCOHBiDesc               =   $request->GMCOHBiDesc;
@@ -62,25 +62,25 @@ trait companyDbOperations {
         // Banking Info
         $Company->GMCOHBankId1              =   $request->GMCOHBankId1;
         $Company->GMCOHBranchId1            =   $request->branchId1;
-        $Company->GMCOHIFSId1               =   $request->ifsCode1;
+        $Company->GMCOHIFSId1               =   $request->GMCOHIFSId1;
         $Company->GMCOHBankAccNo1           =   $request->GMCOHBankAccNo1;
         $Company->GMCOHBankAcName1          =   $request->GMCOHBankAcName1;
         $Company->GMCOHBankId2              =   $request->GMCOHBankId2;
         $Company->GMCOHBranchId2            =   $request->branchId2;
-        $Company->GMCOHIFSId2               =   $request->ifsCode2;
+        $Company->GMCOHIFSId2               =   $request->GMCOHIFSId2;
         $Company->GMCOHBankAccNo2           =   $request->GMCOHBankAccNo2;
         $Company->GMCOHBankAcName2          =   $request->GMCOHBankAcName2;
-        
+
         $Company->GMCOHMarkForDeletion      =   0;
         $Company->GMCOHUser                 =   Auth::user()->name;
         $Company->GMCOHLastUpdated          =   Carbon::now();
-        $Company->save(); 
+        $Company->save();
         if($request->get('button_action') == 'insert') {
-            $UniqueId = $Company->GMCOHUniqueId; 
+            $UniqueId = $Company->GMCOHUniqueId;
         }elseif($request->get('button_action') == 'update'){
             $UniqueId = $request->get('GMCOHUniqueId');
         }
-        return $UniqueId; 
+        return $UniqueId;
      }
      public function gmcmFethchEditedDataTrait($request)
      {
@@ -109,7 +109,7 @@ trait companyDbOperations {
             'GMCOHCityId'               =>  $Company->GMCOHCityId,
             'GMCOHStateId'              =>  $Company->GMCOHStateId,
             'GMCOHCountryId'            =>  $Company->GMCOHCountryId,
-            'GMCOHPinCode'              =>  $Company->GMCOHPinCode,            
+            'GMCOHPinCode'              =>  $Company->GMCOHPinCode,
             // Statutory and Logo Info
             'GMCOHCINNo'                =>  $Company->GMCOHCINNo,
             'GMCOHPANNo'                =>  $Company->GMCOHPANNo,
@@ -142,20 +142,20 @@ trait companyDbOperations {
         $Company->GMCOHMarkForDeletion   =   1;
         $Company->GMCOHUser              =   Auth::user()->name;
         $Company->GMCOHDeletedAt         =  Carbon::now();
-        $Company->save();        
+        $Company->save();
         return $Company->GMCOHCompanyId;
      }
-     public function gmcmBrowserDeletedRecordsTrait() 
+     public function gmcmBrowserDeletedRecordsTrait()
      {
          return $browserDeletedRecords = Company::
          select(
-             'GMCOHUniqueId', 
+             'GMCOHUniqueId',
              'GMCOHCompanyId',
-             'GMCOHDesc1', 
+             'GMCOHDesc1',
              'GMCOHDesc2')
              // This is AND condition in wherer to apply OR second where should be orwhere
          ->where('GMCOHMarkForDeletion', 1);
-     }     
+     }
      public function gmcmUnDeleteRecordTrait($request)
      {
          $UniqueId = $request->input('id');
@@ -165,8 +165,8 @@ trait companyDbOperations {
          $Company->GMCOHUser              =   Auth::user()->name;
          $Company->GMCOHUser              =   '3SIS';
          $Company->GMCOHDeletedAt         =  Null;
-         $Company->save();        
+         $Company->save();
          return $Company->GMCOHCompanyId;
-     }   
-     
+     }
+
 }

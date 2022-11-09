@@ -22,8 +22,8 @@ trait getDescriptions3SIS {
         ->leftJoin('t05901L03', 't05901L03.GMCMHCountryId', '=', 't05901L05.GMCTHCountryId')
         ->where('t05901L05.GMCTHCityId', $Id)
         ->get([
-            't05901L04.GMSMHStateId', 
-            't05901L04.GMSMHDesc1', 
+            't05901L04.GMSMHStateId',
+            't05901L04.GMSMHDesc1',
             't05901L03.GMCMHCountryId',
             't05901L03.GMCMHDesc1'
         ]);
@@ -79,4 +79,4 @@ trait getDescriptions3SIS {
             return $res;
         }
     }
-}   
+}

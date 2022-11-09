@@ -150,14 +150,14 @@ class CompanyController extends Controller
     // City Details
     public function getcityStateDropDown(Request $request)
     {
-        $CityDetails = $this->getContryStateDesc($request->id);  
+        $CityDetails = $this->getContryStateDesc($request->id);
         return response()->json($CityDetails);
     }
 
     // Branch Details
     public function getBankBranch(Request $request)
     {
-        $branchDetails = $this->getBankBranch1($request->id);  
+        $branchDetails = $this->getBankBranch1($request->id);
         return response()->json($branchDetails);
     }
 

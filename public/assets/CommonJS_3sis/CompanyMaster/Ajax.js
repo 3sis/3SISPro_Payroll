@@ -109,6 +109,7 @@ $(document).on('click', '.edit', function () {
             $('#GMCOHImageFileName').val(data.GMCOHImageFileName);
             // Banking Info
             $('#GMCOHBankId1').val(data.GMCOHBankId1);
+            // console.log('BankId1 : '+ data.GMCOHBankId1);
             $('#GMCOHBranchId1').val(data.GMCOHBranchId1);
             $('#GMCOHIFSId1').val(data.GMCOHIFSId1);
             $('#GMCOHBankAccNo1').val(data.GMCOHBankAccNo1);
@@ -268,6 +269,7 @@ $(document).on('click', '.restore', function () {
 
 $('#cityId').change(function () {
     let id = $(this).val();
+    alert('state');
     $.ajax({
         url: "/city/dropdown",
         type: 'post',
