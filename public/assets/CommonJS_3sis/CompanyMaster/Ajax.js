@@ -1,15 +1,16 @@
-$(document).ready(function(){
+$(document).ready(function () {
     $modalTitle = 'Company'
 
-    $('#landingPageBrowser3SIS').DataTable( {
+    $('#landingPageBrowser3SIS').DataTable({
         buttons: {
-        buttons: [
-            { extend: 'excel', className: 'btn' },
-            { extend: 'print', className: 'btn' }
-        ]
+            buttons: [
+                { extend: 'excel', className: 'btn' },
+                { extend: 'print', className: 'btn' }
+            ]
         },
         "oLanguage": {
-            "oPaginate": { "sPrevious": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" \
+            "oPaginate": {
+                "sPrevious": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" \
                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" \
                 class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5">\
                 </polyline></svg>', "sNext": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" \
@@ -24,23 +25,23 @@ $(document).ready(function(){
         stripeClasses: [],
         pageLength: 6,
         lengthMenu: [6, 10, 20, 50],
-        order: [ 8, "desc" ],
+        order: [8, "desc"],
         processing: true,
         serverSide: true,
         // CopyChange
         "ajax": "/company/Master",
-        "columns":[
-        // CopyChange
-        {data: "GMCOHCompanyId"},
-        {data: "GMCOHDesc1"},
-        {data: "GMCOHNickName"},
-        {data: "GMCOHTagLine"},
-        {data: "action", orderable:false, searchable: false},
-        {data: "GMCOHDesc2", "visible": false},
-        {data: "GMCOHBiDesc", "visible": false},
-        {data: "GMCOHUser", "visible": false},
-        {data: "GMCOHLastUpdated", "visible": false},
-        {data: "GMCOHUniqueId", "visible": false},
+        "columns": [
+            // CopyChange
+            { data: "GMCOHCompanyId" },
+            { data: "GMCOHDesc1" },
+            { data: "GMCOHNickName" },
+            { data: "GMCOHTagLine" },
+            { data: "action", orderable: false, searchable: false },
+            { data: "GMCOHDesc2", "visible": false },
+            { data: "GMCOHBiDesc", "visible": false },
+            { data: "GMCOHUser", "visible": false },
+            { data: "GMCOHLastUpdated", "visible": false },
+            { data: "GMCOHUniqueId", "visible": false },
         ],
         "columnDefs": [
             { "width": "5%", "targets": 0 },
@@ -51,24 +52,23 @@ $(document).ready(function(){
         ]
     });
 
- });
-$('#add_Data').click(function(){
+});
+$('#add_Data').click(function () {
     $("#GMCOHCompanyId").attr("readonly", false);
     $('#currenyId').val('').change();
     fnReinstateFormControl('0');
 });
 // When edit button is pushed
-$(document).on('click', '.edit', function(){
+$(document).on('click', '.edit', function () {
 
     var id = $(this).attr('id');
     $.ajax({
         // CopyChange
         url: "/company/Master/Update",
         method: 'GET',
-        data: {id:id},
+        data: { id: id },
         dataType: 'json',
-        success: function(data)
-        {
+        success: function (data) {
             // General Info
             $('#GMCOHUniqueId').val(data.GMCOHUniqueId);
             $('#GMCOHCompanyId').val(data.GMCOHCompanyId);
@@ -129,58 +129,52 @@ $(document).on('click', '.edit', function(){
 });
 // Edit Ends
 // When submit button is pushed
-$('#singleLevelDataEntryForm').on('submit', function(event){
-        event.preventDefault();
-        $.ajax({
-            url: $(this).attr('action'),
-            method: $(this).attr('method'),
-            data: new FormData(this),
-            processData: false,
-            dataType: "json",
-            contentType: false,
-            beforeSend: function(){
-                $(document).find('span.error-text').text('');
-            },
-            success:function(data)
-            {
-                if(data.status == 0)
-                {
-                    $.each(data.error, function(prefix,val){
-                        $('span.' +prefix+ '_error').text(val[0]);
-                        $('#' +prefix).css('border-color', '#dc3545');
-                    });
-                }else
-                {
-                    $finalMessage3SIS = fnSingleLevelFinalSave(data.masterName, data.Id, data.Desc1, data.updateMode);
-                    $('#FinalSaveMessage').html($finalMessage3SIS);
-                    fnReinstateFormControl('0');
-                    $('#landingPageBrowser3SIS').DataTable().ajax.reload();
-                    if(data.updateMode=='Updated')
-                    {
-                        $('#entryModalSmall').modal('hide');
-                        $('#modalZoomFinalSave3SIS').modal('show');
-                    }
-                    else
-                    {
-                        $('#form_output').html($finalMessage3SIS);
-                    }
+$('#singleLevelDataEntryForm').on('submit', function (event) {
+    event.preventDefault();
+    $.ajax({
+        url: $(this).attr('action'),
+        method: $(this).attr('method'),
+        data: new FormData(this),
+        processData: false,
+        dataType: "json",
+        contentType: false,
+        beforeSend: function () {
+            $(document).find('span.error-text').text('');
+        },
+        success: function (data) {
+            if (data.status == 0) {
+                $.each(data.error, function (prefix, val) {
+                    $('span.' + prefix + '_error').text(val[0]);
+                    $('#' + prefix).css('border-color', '#dc3545');
+                });
+            } else {
+                $finalMessage3SIS = fnSingleLevelFinalSave(data.masterName, data.Id, data.Desc1, data.updateMode);
+                $('#FinalSaveMessage').html($finalMessage3SIS);
+                fnReinstateFormControl('0');
+                $('#landingPageBrowser3SIS').DataTable().ajax.reload();
+                if (data.updateMode == 'Updated') {
+                    $('#entryModalSmall').modal('hide');
+                    $('#modalZoomFinalSave3SIS').modal('show');
+                }
+                else {
+                    $('#form_output').html($finalMessage3SIS);
                 }
             }
-        })
-    });
-    // Submit Ends
+        }
+    })
+});
+// Submit Ends
 // Submit Ends
 // When delete button is pushed
-$(document).on('click', '.delete', function(){
+$(document).on('click', '.delete', function () {
     var UniqueId = $(this).attr('id');
     // Fetch Record first that need to be deleted.
     $.ajax({
         url: "/company/Master/Update",
         method: 'GET',
-        data: {id:UniqueId},
+        data: { id: UniqueId },
         dataType: 'json',
-        success: function(data)
-        {
+        success: function (data) {
             $deleteMessage3SIS = fnSingleLevelDeleteConfirmation($modalTitle, data.GMCOHCompanyId, '');
             $('#DeleteRecord').html($deleteMessage3SIS);
             $('#modalZoomDeleteRecord3SIS').modal('show');
@@ -188,14 +182,13 @@ $(document).on('click', '.delete', function(){
     });
     // Fetch Record Ends
     // Delete record only when OK is pressed on Modal.
-    $(document).on('click', '.confirm', function(){
+    $(document).on('click', '.confirm', function () {
         $.ajax({
             // CopyChange
-            url:"/company/Master/Delete",
-            mehtod:"get",
-            data:{id:UniqueId},
-            success:function(data)
-            {
+            url: "/company/Master/Delete",
+            mehtod: "get",
+            data: { id: UniqueId },
+            success: function (data) {
                 $finalMessage3SIS = fnSingleLevelFinalSave(data.masterName, data.Id, data.Desc1, data.updateMode);
                 $('#FinalSaveMessage').html($finalMessage3SIS);
                 $('#landingPageBrowser3SIS').DataTable().ajax.reload();
@@ -212,87 +205,103 @@ $(document).on('click', '.delete', function(){
 });
 // Delete Ends
 // Whed undo button is pushed
-$('#Undelete_Data').click(function(){
-    $('#html-extension3SIS').DataTable( {
-    stripeClasses: [],
-    pageLength: 6,
-    lengthMenu: [6, 10, 20, 50],
-    order: [[ 1, "desc" ]],
-    processing: true,
-    serverSide: true,
-    destroy: true,
-    // CopyChange
-    "ajax": "/company/Master1",
-    "columns":[
+$('#Undelete_Data').click(function () {
+    $('#html-extension3SIS').DataTable({
+        stripeClasses: [],
+        pageLength: 6,
+        lengthMenu: [6, 10, 20, 50],
+        order: [[1, "desc"]],
+        processing: true,
+        serverSide: true,
+        destroy: true,
         // CopyChange
-        {data: "GMCOHCompanyId"},
-        {data: "GMCOHDesc1"},
-        {data: "GMCOHDesc2"},
-        {data: "action", orderable:false, searchable: false},
-        {data: "GMCOHUniqueId", "visible": false},
-    ]
+        "ajax": "/company/Master1",
+        "columns": [
+            // CopyChange
+            { data: "GMCOHCompanyId" },
+            { data: "GMCOHDesc1" },
+            { data: "GMCOHDesc2" },
+            { data: "action", orderable: false, searchable: false },
+            { data: "GMCOHUniqueId", "visible": false },
+        ]
     });
     fnReinstateDataTable('0');
 });
 // undo Ends
 // When restore button is pushed
-$(document).on('click', '.restore', function(){
-        var DeletedUniqueId = $(this).attr('id');
-        // Fetch Record first that need to be restored.
-        $.ajax({
-            url: "/company/Master/Update",
-            method: 'GET',
-            data: {id:DeletedUniqueId},
-            dataType: 'json',
-            success: function(data)
-            {
-                $restoreMessage3SIS = fnSingleLevelRestoreConfirmation($modalTitle, data.GMCOHCompanyId, '');
-                $('#RestoreRecord').html($restoreMessage3SIS);
-                $('#modalZoomRestoreRecord3SIS').modal('show');
-                $('#modalZoomRestoreRecord3SIS').modal('hide');
-            }
-        });
-        // Fetch Record Ends
-        // Restore record only when OK is pressed on Modal.
-        $(document).on('click', '.confirmrestore', function(){
-            $.ajax({
-                url:"/company/Master/Undelete",
-                mehtod:"get",
-                data:{id:DeletedUniqueId},
-                success:function(data)
-                {
-                    $('#landingPageBrowser3SIS').DataTable().ajax.reload();
-                    $('#html-extension3SIS').DataTable().ajax.reload();
-                    DeletedUniqueId = 0;
-                    $('#modalZoomRestoreRecord3SIS').modal('hide');
-                    // $('#dataTableModalSmall').modal('hide');
-                }
-            })
-        });
-        $("#modalZoomRestoreRecord3SIS").on("hide.bs.modal", function () {
-            DeletedUniqueId = 0;
-        });
+$(document).on('click', '.restore', function () {
+    var DeletedUniqueId = $(this).attr('id');
+    // Fetch Record first that need to be restored.
+    $.ajax({
+        url: "/company/Master/Update",
+        method: 'GET',
+        data: { id: DeletedUniqueId },
+        dataType: 'json',
+        success: function (data) {
+            $restoreMessage3SIS = fnSingleLevelRestoreConfirmation($modalTitle, data.GMCOHCompanyId, '');
+            $('#RestoreRecord').html($restoreMessage3SIS);
+            $('#modalZoomRestoreRecord3SIS').modal('show');
+            $('#modalZoomRestoreRecord3SIS').modal('hide');
+        }
     });
-    // restore Ends
-
-$('#cityId').change(function(){
-        let id = $(this).val();
+    // Fetch Record Ends
+    // Restore record only when OK is pressed on Modal.
+    $(document).on('click', '.confirmrestore', function () {
         $.ajax({
-            url: "/city/dropdown",
-            type:'post',
-            data:'id=' + id,
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            },
-            success:function(response){
-                $('#GMCOHStateId').val(response.stateId);
-                $('#stateDesc1').val(response.stateDesc1);
-                $('#GMCOHCountryId').val(response.countryId);
-                $('#countryDesc1').val(response.countryDesc1);
+            url: "/company/Master/Undelete",
+            mehtod: "get",
+            data: { id: DeletedUniqueId },
+            success: function (data) {
+                $('#landingPageBrowser3SIS').DataTable().ajax.reload();
+                $('#html-extension3SIS').DataTable().ajax.reload();
+                DeletedUniqueId = 0;
+                $('#modalZoomRestoreRecord3SIS').modal('hide');
+                // $('#dataTableModalSmall').modal('hide');
             }
         })
     });
+    $("#modalZoomRestoreRecord3SIS").on("hide.bs.modal", function () {
+        DeletedUniqueId = 0;
+    });
+});
+// restore Ends
 
+$('#cityId').change(function () {
+    let id = $(this).val();
+    $.ajax({
+        url: "/city/dropdown",
+        type: 'post',
+        data: 'id=' + id,
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        success: function (response) {
+            $('#GMCOHStateId').val(response.stateId);
+            $('#stateDesc1').val(response.stateDesc1);
+            $('#GMCOHCountryId').val(response.countryId);
+            $('#countryDesc1').val(response.countryDesc1);
+        }
+    })
+});
+
+
+// Bank branch dropdown
+$('#branchId1').change(function () {
+    let id = $(this).val();
+    $.ajax({
+        url: "/bankBranch/branchDetail",
+        type: 'post',
+        data: 'id=' + id,
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        success: function (response) {
+            $('#GMCOHBankId1').val(response.BankId);
+            $('#bankName1').val(response.bankDesc1);
+            $('#GMCOHIFSId1').val(response.IFSCId);
+        }
+    })
+});
 
 $('#currenyId,#quantityId,#valueId,#cityId,#branchId1,#branchId2').select2({
     dropdownParent: $('#entryModalSmall')
