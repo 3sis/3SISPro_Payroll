@@ -1,7 +1,9 @@
 <?php
 
 return [
-
+    'table_default_theme' => env('TABLE_DEFAULT_THEME', 'purpleBrowserOnDark3SIS'),
+    'modal_form_theme' => env('MODAL_FORM_THEME', 'purpleBackgroundModalContent3SIS'),
+    'card_form_theme' => env('CARD_FORM_THEME', 'purpleBackgroundCard3SIS'),
     /*
     |--------------------------------------------------------------------------
     | Application Name

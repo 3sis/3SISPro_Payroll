@@ -31,31 +31,47 @@ class CompanyController extends Controller
         $data = $this->dataTableXLSchemaTrait();
         $menu = $this->menu();
 
+        $table_default_theme = config('app.table_default_theme');
+        $modal_form_theme = config('app.modal_form_theme');
+        $card_form_theme = config('app.card_form_theme');
+
+        // dd($userTheme);
         $currency_list = Currency::all();
         $city_list = City::all();
         $bank1_list = BankName::all();
         $bank2_list = BranchName::all();
         $UserId = \Auth::user()->name;
-        // dd($UserId);
 
         return view('CommonMasters.GeneralMaster.company',
-            compact('menu', 'currency_list', 'city_list', 'bank1_list', 'bank2_list', 'UserId'))->with($data);
+            compact('menu', 'currency_list', 'city_list', 'bank1_list', 'bank2_list',
+                'UserId','table_default_theme', 'modal_form_theme', 'card_form_theme'))->with($data);
     }
     public function BrowserData()
     {
         $BrowserDataTable = $this->gmcmBrowserDataTrait();
-        // dd($BrowserDataTable);
+
         return DataTables::of($BrowserDataTable)
             ->addColumn('action', function ($company) {
-                return '<a href="#" class="btn mr-1 btnEditRec3SIS edit" id="' . $company->GMCOHUniqueId . '">Edit
-                        <i class="fas fa-edit fa-xs"></i>
-                    </a>
-                    <a href="#" class="btn btnDeleteRec3SIS delete" id="' . $company->GMCOHUniqueId . '">Delete
-                        <i class="far fa-trash-alt fa-xs"></i>
-                    </a>';
+                // return '<a href="#" class="btn mr-1 btnEditRec3SIS edit" id="' . $company->GMCOHUniqueId . '">Edit
+                //         <i class="fas fa-edit fa-xs"></i>
+                //     </a>
+                //     <a href="#" class="btn btnDeleteRec3SIS delete" id="' . $company->GMCOHUniqueId . '">Delete
+                //         <i class="far fa-trash-alt fa-xs"></i>
+                //     </a>';
 
-         // return '<a href="javascript:void(0);" class="bs-tooltip" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit-2 p-1 br-6 mb-1" style="color: #000;"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></a>
-         //          <a href="javascript:void(0);" class="bs-tooltip" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trash p-1 br-6 mb-1" style="color: #000;"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg></a>';
+         return
+            '<a href="javascript:void(0);" class="btn mr-1 btnEditRec3SIS bs-tooltip edit" id="' . $company->GMCOHUniqueId . '">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="feather feather-edit-2 p-1 br-6 mb-1" style="color: black;">
+                <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></a>
+
+                <a href="javascript:void(0);" class="btn mr-1 btnDeleteRec3SIS bs-tooltip delete" id="' . $company->GMCOHUniqueId . '">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="feather feather-trash p-1 br-6 mb-1" style="color: red;">
+                <polyline points="3 6 5 6 21 6"></polyline>
+                <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg></a>';
             })
             ->rawColumns(['action'])
             ->make(true);
