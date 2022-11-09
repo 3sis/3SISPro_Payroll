@@ -109,7 +109,7 @@
                     data-keyboard="false" role="dialog" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered 3SISPro-modal-dialog modal-xl" role="document">
                         <!-- Shishir Style -->
-                        <div class='modal-content blueBackgroundModalContent3SIS'>
+                        <div class='modal-content purpleBackgroundModalContent3SIS'>
                             <div class="modal-header" id="registerModalLabel">
                                 <h4 class="modal-title text-light">Master</h4>
                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
@@ -126,7 +126,7 @@
                                 <div class="modal-body">
                                     <div id="toggleAccordion">
                                         <!-- Shishir Style -->
-                                        <div class="card blueBackgroundCard3SIS">
+                                        <div class="card purpleBackgroundCard3SIS">
                                             <div class="card-header" style="background: black" id="headingOne1">
                                                 <section class="mb-0 mt-0">
                                                     <div role="menu" class="" data-toggle="collapse" data-target="#defaultAccordionOne" aria-expanded="true" aria-controls="defaultAccordionOne">
