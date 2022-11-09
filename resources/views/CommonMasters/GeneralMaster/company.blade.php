@@ -15,7 +15,7 @@
                     </button>
                 </div>
                 <div class="table-responsive" style="padding-top: 5px;">
-                    <table id="landingPageBrowser3SIS" class="purpleBrowserOnDark3SIS" style="width:100%">
+                    <table id="landingPageBrowser3SIS" class="{{env('TABLE_DEFAULT_THEME')}}" style="width:100%">
                         <thead>
                             <tr>
                                 <!--CopyChange-->
