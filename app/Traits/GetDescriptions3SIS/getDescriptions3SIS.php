@@ -7,6 +7,9 @@ use App\Models\CommonMasters\GeographicInfo\Country;
 use App\Models\CommonMasters\GeographicInfo\Location;
 use App\Models\Payroll\EmployeeMaster\GeneralInfo;
 use App\Models\CommonMasters\FiscalYear\FiscalYear;
+use App\Models\CommonMasters\BankingMaster\BankName;
+use App\Models\CommonMasters\BankingMaster\BranchName;
+use App\Models\CommonMasters\GeneralMaster\Currency;
 
 trait getDescriptions3SIS {
     public function getStateCountryDescTrait($request)
@@ -45,5 +48,35 @@ trait getDescriptions3SIS {
             'FYFYHEndDate'
         ]);
         // ->first();
+    }
+    // City Details
+    public function getContryStateDesc($id)
+    {
+        if (!empty($id)) {
+            $res = [];
+            $city_data = City::where('GMCTHCityId', $id)->first();
+            $state_data = State::where('GMSMHStateId', $city_data->GMCTHStateId)->first();
+            $country_data = Country::where('GMCMHCountryId', $city_data->GMCTHCountryId)->first();
+            $res['stateId'] = $city_data['GMCTHStateId'];
+            $res['stateDesc1'] = $state_data['GMSMHDesc1'];
+            $res['countryId'] = $city_data['GMCTHCountryId'];
+            $res['countryDesc1'] = $country_data['GMCMHDesc1'];
+            return $res;
+        }
+    }
+
+    // Branch Details
+    public function getBankBranch1($id)
+    {
+        if (!empty($id)) {
+            // dd($id);
+            $res = [];
+            $branch_data = BranchName::where('BMBRHBranchId', $id)->first();
+            $bank_data = BankName::where('BMBNHBankId', $branch_data->BMBRHBankId)->first();
+            $res['BankId'] = $branch_data['BMBRHBankId'];
+            $res['bankDesc1'] = $bank_data['BMBNHDesc1'];
+            $res['IFSCId'] = $branch_data['BMBRHIFSCId'];
+            return $res;
+        }
     }
 }   

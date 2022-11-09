@@ -72,7 +72,7 @@ trait companyDbOperations {
         $Company->GMCOHBankAcName2          =   $request->GMCOHBankAcName2;
         
         $Company->GMCOHMarkForDeletion      =   0;
-        // $Company->GMCOHUser                 =   Auth::user()->name;
+        $Company->GMCOHUser                 =   Auth::user()->name;
         $Company->GMCOHLastUpdated          =   Carbon::now();
         $Company->save(); 
         if($request->get('button_action') == 'insert') {
@@ -140,7 +140,7 @@ trait companyDbOperations {
         $Company = Company::find($UniqueId);
         //Eloquent Way
         $Company->GMCOHMarkForDeletion   =   1;
-        // $Company->GMCOHUser              =   Auth::user()->name;
+        $Company->GMCOHUser              =   Auth::user()->name;
         $Company->GMCOHDeletedAt         =  Carbon::now();
         $Company->save();        
         return $Company->GMCOHCompanyId;
@@ -162,7 +162,7 @@ trait companyDbOperations {
          //Eloquent Way
          $Company = Company::find($UniqueId);
          $Company->GMCOHMarkForDeletion   =   0;
-        //  $Company->GMCOHUser              =   Auth::user()->name;
+         $Company->GMCOHUser              =   Auth::user()->name;
          $Company->GMCOHUser              =   '3SIS';
          $Company->GMCOHDeletedAt         =  Null;
          $Company->save();        

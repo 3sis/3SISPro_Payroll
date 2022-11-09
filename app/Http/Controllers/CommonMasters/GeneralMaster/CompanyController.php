@@ -40,12 +40,11 @@ class CompanyController extends Controller
         // dd($userTheme);
         $currency_list = Currency::all();
         $city_list = City::all();
-        $bank1_list = BankName::all();
-        $bank2_list = BranchName::all();
+        $branch_list = BranchName::all();
         $UserId = \Auth::user()->name;
 
         return view('CommonMasters.GeneralMaster.company',
-            compact('menu', 'currency_list', 'city_list', 'bank1_list', 'bank2_list',
+            compact('menu', 'currency_list', 'city_list', 'branch_list',
                 'UserId', 'table_default_theme', 'modal_form_theme', 'card_form_theme'))->with($data);
     }
     public function BrowserData()
@@ -117,7 +116,6 @@ class CompanyController extends Controller
                 return response()->json(['status' => 1, 'Id' => $request->get('GMCOHCompanyId'), 'Desc1' => $request->get('GMCOHDesc1'),
                     'masterName' => 'Company ', 'updateMode' => 'Updated']);
             }
-
         }
     }
     public function Fetchdata(Request $request)
@@ -149,39 +147,18 @@ class CompanyController extends Controller
         return response()->json(['status' => 1, 'Id' => $Id,
             'Desc1' => '', 'masterName' => 'Company ', 'updateMode' => 'Restored']);
     }
-// City Details
+    // City Details
     public function getcityStateDropDown(Request $request)
     {
-
-        if (!empty($request->id)) {
-            // dd($request->id);
-            $res = [];
-            $city_data = City::where('GMCTHCityId', $request->id)->first();
-            $state_data = State::where('GMSMHStateId', $city_data->GMCTHStateId)->first();
-            $country_data = Country::where('GMCMHCountryId', $city_data->GMCTHCountryId)->first();
-            $res['stateId'] = $city_data['GMCTHStateId'];
-            $res['stateDesc1'] = $state_data['GMSMHDesc1'];
-            $res['countryId'] = $city_data['GMCTHCountryId'];
-            $res['countryDesc1'] = $country_data['GMCMHDesc1'];
-            return response()->json($res);
-        }
+        $CityDetails = $this->getContryStateDesc($request->id);  
+        return response()->json($CityDetails);
     }
 
-    // City Details
+    // Branch Details
     public function getBankBranch(Request $request)
     {
-        if (!empty($request->id)) {
-            // dd($request->id);
-            $res = [];
-            $branch_data = BranchName::where('BMBRHBranchId', $request->id)->first();
-            $bank_data = BankName::where('BMBNHBankId', $branch_data->BMBRHBankId)->first();
-            $res['BankId'] = $branch_data['BMBRHBankId'];
-            $res['bankDesc1'] = $bank_data['BMBNHDesc1'];
-            $res['IFSCId'] = $branch_data['BMBRHIFSCId'];
-            echo 'Data Submitted.';
-            return $branch_data;
-            return response()->json($res);
-        }
+        $branchDetails = $this->getBankBranch1($request->id);  
+        return response()->json($branchDetails);
     }
 
 
@@ -194,9 +171,8 @@ class CompanyController extends Controller
 
         $currency_list = Currency::all();
         $city_list = City::all();
-        $bank1_list = BankName::all();
-        $bank2_list = BranchName::all();
+        $branch_list = BranchName::all();
 
-        return view('CommonMasters.GeneralMaster.tab', compact('menu', 'currency_list', 'city_list', 'bank1_list', 'bank2_list'))->with($data);
+        return view('CommonMasters.GeneralMaster.tab', compact('menu', 'currency_list', 'city_list', 'branch_list'))->with($data);
     }
 }

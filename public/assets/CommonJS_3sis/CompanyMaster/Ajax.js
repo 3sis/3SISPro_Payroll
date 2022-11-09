@@ -78,8 +78,8 @@ $(document).on('click', '.edit', function () {
             $('#GMCOHNickName').val(data.GMCOHNickName);
             $('#GMCOHTagLine').val(data.GMCOHTagLine);
             $('#GMCOHCurrenyId').val(data.GMCOHCurrenyId);
-            $('#GMCOHDecimalPositionQty').val(data.GMCOHDecimalPositionQty);
-            $('#GMCOHDecimalPositionValue').val(data.GMCOHDecimalPositionValue);
+            $('#quantityId').val(data.GMCOHDecimalPositionQty).change();
+            $('#valueId').val(data.GMCOHDecimalPositionValue).change();
             $('#GMCOHLandLine').val(data.GMCOHLandLine);
             $('#GMCOHMobileNo').val(data.GMCOHMobileNo);
             $('#GMCOHEmail').val(data.GMCOHEmail);
@@ -299,6 +299,23 @@ $('#branchId1').change(function () {
             $('#GMCOHBankId1').val(response.BankId);
             $('#bankName1').val(response.bankDesc1);
             $('#GMCOHIFSId1').val(response.IFSCId);
+        }
+    })
+});
+// Bank branch dropdown
+$('#branchId2').change(function () {
+    let id = $(this).val();
+    $.ajax({
+        url: "/bankBranch/branchDetail",
+        type: 'post',
+        data: 'id=' + id,
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        success: function (response) {
+            $('#GMCOHBankId2').val(response.BankId);
+            $('#bankName2').val(response.bankDesc1);
+            $('#GMCOHIFSId2').val(response.IFSCId);
         }
     })
 });

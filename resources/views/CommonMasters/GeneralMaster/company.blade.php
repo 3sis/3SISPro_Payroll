@@ -463,10 +463,10 @@
                                                                                     style='width: 100%;'>
                                                                                     <option value=''>-- Select
                                                                                         Branch --</option>
-                                                                                    @foreach ($bank1_list as $bank1)
+                                                                                    @foreach ($branch_list as $bank1)
                                                                                         <option
-                                                                                            value='{{ $bank1->BMBNHUniqueId }}'>
-                                                                                            {{ $bank1->BMBNHDesc1 }}
+                                                                                            value='{{ $bank1->BMBRHBranchId }}'>
+                                                                                            {{ $bank1->BMBRHDesc1 }}
                                                                                         </option>
                                                                                     @endforeach
                                                                                 </select>
@@ -542,10 +542,10 @@
                                                                                     style='width: 100%;'>
                                                                                     <option value=''>-- Select
                                                                                         Branch --</option>
-                                                                                    @foreach ($bank2_list as $bank2)
+                                                                                        @foreach ($branch_list as $bank1)
                                                                                         <option
-                                                                                            value='{{ $bank2->BMBRHUniqueId }}'>
-                                                                                            {{ $bank2->BMBRHDesc1 }}
+                                                                                            value='{{ $bank1->BMBRHBranchId }}'>
+                                                                                            {{ $bank1->BMBRHDesc1 }}
                                                                                         </option>
                                                                                     @endforeach
                                                                                 </select>
