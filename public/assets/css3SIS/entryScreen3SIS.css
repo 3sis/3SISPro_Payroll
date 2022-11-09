@@ -9,10 +9,61 @@
 
 /* Card: Background */
 .blueBackgroundCard3SIS {
-    background: #436B95 !important;
+    background: #1D2951 !important;
 }
 
 /* Card Header: Background */
 .blueBackgroundCardHeader3SIS {
+    background: black !important;
+}
+
+/****************************** Purple Theme - Dark Background******************************/
+
+/* Modal Content: Background */
+.purpleBackgroundModalContent3SIS {
+    background: #301934 !important;
+}
+
+/* Card: Background */
+.purpleBackgroundCard3SIS {
+    background: #32174D !important;
+}
+
+/* Card Header: Background */
+.purpleBackgroundCardHeader3SIS {
+    background: black !important;
+}
+
+/****************************** Green Theme - Dark Background******************************/
+
+/* Modal Content: Background */
+.greenBackgroundModalContent3SIS {
+    background: #013220 !important;
+}
+
+/* Card: Background */
+.greenBackgroundCard3SIS {
+    background: #1A2421 !important;
+}
+
+/* Card Header: Background */
+.greenBackgroundCardHeader3SIS {
+    background: black !important;
+}
+
+/****************************** red Theme - Dark Background******************************/
+
+/* Modal Content: Background */
+.redBackgroundModalContent3SIS {
+    background: #370E0B !important;
+}
+
+/* Card: Background */
+.redBackgroundCard3SIS {
+    background: #300D0A !important;
+}
+
+/* Card Header: Background */
+.redBackgroundCardHeader3SIS {
     background: black !important;
 }
