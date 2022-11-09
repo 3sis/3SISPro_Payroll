@@ -490,8 +490,8 @@
                                                                             <div class='form-group'>
                                                                                 <label style='color:#ffc107'>IFS
                                                                                     Code</label>
-                                                                                <input type="text" name="ifsCode1"
-                                                                                    id="ifsCode1"
+                                                                                <input type="text" name="GMCOHIFSId1"
+                                                                                    id="GMCOHIFSId1"
                                                                                     class="form-control" readonly />
                                                                             </div>
                                                                         </div>
@@ -569,8 +569,8 @@
                                                                             <div class='form-group'>
                                                                                 <label style='color:#20c997'>IFS
                                                                                     Code</label>
-                                                                                <input type="text" name="ifsCode2"
-                                                                                    id="ifsCode2"
+                                                                                <input type="text" name="GMCOHIFSId2"
+                                                                                    id="GMCOHIFSId2"
                                                                                     class="form-control" readonly />
                                                                             </div>
                                                                         </div>
@@ -676,21 +676,21 @@
                                                             <div class="row mt-0">
                                                                 <div class="col-md-6">
                                                                     <div class='form-group '>
-                                                                        <label>Folder Name</label>
-                                                                        <input type="text" name='GMCOHFolderName'
-                                                                            id='GMCOHFolderName'
-                                                                            class='form-control few-options'
-                                                                            maxlength="200" placeholder="Folder Name">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-md-6">
-                                                                    <div class='form-group '>
                                                                         <label>Company Logo</label>
                                                                         <input type="text"
                                                                             name='GMCOHImageFileName'
                                                                             id='GMCOHImageFileName'
                                                                             class='form-control few-options'
-                                                                            maxlength="500" placeholder="Folder Name">
+                                                                            maxlength="500" placeholder="Company Logo">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <div class='form-group '>
+                                                                        <label>Logo Folder Name</label>
+                                                                        <input type="text" name='GMCOHFolderName'
+                                                                            id='GMCOHFolderName'
+                                                                            class='form-control few-options'
+                                                                            maxlength="200" placeholder="Logo Folder Name">
                                                                     </div>
                                                                 </div>
                                                             </div>

@@ -78,9 +78,10 @@ Route::GET('/company/Master/Undelete',[CompanyController::class, 'RestoreDeleted
 Route::POST('/company/Master/getGeoDesc',[CompanyController::class, 'GetGeoDesc'])->name('company.getGeoDesc');
 
 Route::post('/city/dropdown',[CompanyController::class, 'getcityStateDropDown'])->name('dropDownMasters.getGeoDesc');
+Route::post('/bankBranch/branchDetail',[CompanyController::class, 'getBankBranch']);
 //Route for Company Master 3SIS Ends
 
-//tab design test 
+//tab design test
 Route::get('/tabs', [CompanyController::class, 'Tab']);
 
 //Payroll Employee Credentials**********
@@ -110,7 +111,7 @@ Route::get('/tabs', [CompanyController::class, 'Tab']);
     Route::GET('/skills/Master/Delete',[SkillsController::class, 'DeleteData'])->name('skills.deleteData');
     Route::GET('/skills/Master1',[SkillsController::class, 'BrowserDeletedRecords'])->name('skills.browserDeletedRecords');
     Route::GET('/skills/Master/Undelete',[SkillsController::class, 'RestoreDeletedRecord'])->name('skills.restoreDeletedRecords');
-    //Route for Skills Master 3SIS Ends    
+    //Route for Skills Master 3SIS Ends
     //Payroll Employee Credentials Ends**********
 //Route for BloodGroup Master 3SIS
 Route::get('/bloodGroup/index', [BloodGroupController::class, 'Index']);
@@ -174,7 +175,7 @@ Route::POST('/religionMaster/Master/Add',[ReligionMasterController::class, 'Post
 Route::GET('/religionMaster/Master/Delete',[ReligionMasterController::class, 'DeleteData'])->name('religionMaster.deleteData');
 Route::GET('/religionMaster/Master1',[ReligionMasterController::class, 'BrowserDeletedRecords'])->name('religionMaster.browserDeletedRecords');
 Route::GET('/religionMaster/Master/Undelete',[ReligionMasterController::class, 'RestoreDeletedRecord'])->name('religionMaster.restoreDeletedRecords');
-//Route for ReligionMaster Master 3SIS Ends 
+//Route for ReligionMaster Master 3SIS Ends
  //Route for Salutation Master 3SIS
  Route::get('/salutation/index', [SalutationController::class, 'Index']);
  Route::GET('/salutation/Master',[SalutationController::class, 'BrowserData'])->name('salutation.browserData');
@@ -227,4 +228,3 @@ Route::GET('/religionMaster/Master/Undelete',[ReligionMasterController::class, '
     //Route for Designation Master 3SIS
     Route::get('/salesAutomation/index', [SalesAutomationController::class, 'Index']);
     Route::GET('/salesAutomation/Master',[SalesAutomationController::class, 'BrowserData'])->name('salesAutomation.browserData');
-    

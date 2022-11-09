@@ -8,6 +8,8 @@ use App\Models\CommonMasters\BankingMaster\BranchName;
 use App\Models\CommonMasters\GeneralMaster\Currency;
 // Add Model here
 use App\Models\CommonMasters\GeographicInfo\City;
+use App\Models\CommonMasters\GeographicInfo\Country;
+use App\Models\CommonMasters\GeographicInfo\State;
 use App\Models\t92;
 use App\Traits\CommonMasters\GeneralMaster\companyDbOperations;
 use App\Traits\GetDescriptions3SIS\getDescriptions3SIS;
@@ -44,7 +46,7 @@ class CompanyController extends Controller
 
         return view('CommonMasters.GeneralMaster.company',
             compact('menu', 'currency_list', 'city_list', 'bank1_list', 'bank2_list',
-                'UserId','table_default_theme', 'modal_form_theme', 'card_form_theme'))->with($data);
+                'UserId', 'table_default_theme', 'modal_form_theme', 'card_form_theme'))->with($data);
     }
     public function BrowserData()
     {
@@ -59,8 +61,8 @@ class CompanyController extends Controller
                 //         <i class="far fa-trash-alt fa-xs"></i>
                 //     </a>';
 
-         return
-            '<a href="javascript:void(0);" class="btn mr-1 btnEditRec3SIS bs-tooltip edit" id="' . $company->GMCOHUniqueId . '">
+                return
+                '<a href="javascript:void(0);" class="btn mr-1 btnEditRec3SIS bs-tooltip edit" id="' . $company->GMCOHUniqueId . '">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                 class="feather feather-edit-2 p-1 br-6 mb-1" style="color: black;">
@@ -147,19 +149,41 @@ class CompanyController extends Controller
         return response()->json(['status' => 1, 'Id' => $Id,
             'Desc1' => '', 'masterName' => 'Company ', 'updateMode' => 'Restored']);
     }
-
+// City Details
     public function getcityStateDropDown(Request $request)
     {
+
         if (!empty($request->id)) {
+            // dd($request->id);
             $res = [];
-            $city_date = City::where('GMCTHCountryId', $request->id)->first();
-            $res['stateId'] = $city_date['GMCTHStateId'];
-            $res['stateDesc1'] = $city_date['GMCTHDesc1'];
-            $res['countryId'] = $city_date['GMCTHCountryId'];
-            $res['countryDesc1'] = $city_date['GMCTHDesc2'];
+            $city_data = City::where('GMCTHCityId', $request->id)->first();
+            $state_data = State::where('GMSMHStateId', $city_data->GMCTHStateId)->first();
+            $country_data = Country::where('GMCMHCountryId', $city_data->GMCTHCountryId)->first();
+            $res['stateId'] = $city_data['GMCTHStateId'];
+            $res['stateDesc1'] = $state_data['GMSMHDesc1'];
+            $res['countryId'] = $city_data['GMCTHCountryId'];
+            $res['countryDesc1'] = $country_data['GMCMHDesc1'];
             return response()->json($res);
         }
     }
+
+    // City Details
+    public function getBankBranch(Request $request)
+    {
+        if (!empty($request->id)) {
+            // dd($request->id);
+            $res = [];
+            $branch_data = BranchName::where('BMBRHBranchId', $request->id)->first();
+            $bank_data = BankName::where('BMBNHBankId', $branch_data->BMBRHBankId)->first();
+            $res['BankId'] = $branch_data['BMBRHBankId'];
+            $res['bankDesc1'] = $bank_data['BMBNHDesc1'];
+            $res['IFSCId'] = $branch_data['BMBRHIFSCId'];
+            echo 'Data Submitted.';
+            return $branch_data;
+            return response()->json($res);
+        }
+    }
+
 
     //tab design test
     public function Tab()

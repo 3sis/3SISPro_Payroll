@@ -11,13 +11,13 @@ class BankName extends Model
     public $timestamps = false;
     protected $table = 't05902l01';
     protected $primaryKey = 'BMBNHUniqueId';
-    protected $fillable = 
+    protected $fillable =
         [
             'BMBNHUniqueId',
-            'BMBNHBankId', 
-            'BMBNHDesc1', 
-            'BMBNHDesc2', 
-            'BMBNHBiDesc', 
+            'BMBNHBankId',
+            'BMBNHDesc1',
+            'BMBNHDesc2',
+            'BMBNHBiDesc',
             'BMBNHMarkForDeletion',
             'BMBNHUser',
             'BMBNHLastCreated',
