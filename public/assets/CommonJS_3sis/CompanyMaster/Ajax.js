@@ -89,6 +89,7 @@ $(document).on('click', '.edit', function () {
 
             $('#currenyId').val(data.GMCOHCurrenyId).change();
             $('#cityId').val(data.GMCOHCityId).change();
+
             $('#stateDesc1').val(data.GMCOHStateId);
             $('#countryDesc1').val(data.GMCOHCountryId);
 
@@ -267,9 +268,13 @@ $(document).on('click', '.restore', function () {
 });
 // restore Ends
 
-$('#cityId').change(function () {
+$('#cityId').on('change', function(e){
     let id = $(this).val();
-    alert('state');
+   //  console.log(e);return false;
+   // if (e.handled !== true) {
+   //      e.handled = true;
+   //      return;
+   //  }
     $.ajax({
         url: "/city/dropdown",
         type: 'post',
@@ -285,7 +290,6 @@ $('#cityId').change(function () {
         }
     })
 });
-
 
 // Bank branch dropdown
 $('#branchId1').change(function () {

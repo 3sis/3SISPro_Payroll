@@ -4,6 +4,7 @@ namespace App\Models\CommonMasters\GeneralMaster;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\CommonMasters\GeographicInfo\City;
 
 class Company extends Model
 {
@@ -73,4 +74,8 @@ class Company extends Model
             'GMCOHLastUpdated'  => 'datetime:d/m/Y',
             'GMCOHDeletedAt'    => 'datetime:d/m/Y'
         ];
+
+         public function city(){
+            return $this->belongsTo(City::class,'GMCOHCityId','GMCTHCityId');
+          }
 }

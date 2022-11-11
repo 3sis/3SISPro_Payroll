@@ -4,6 +4,7 @@ namespace App\Models\CommonMasters\GeographicInfo;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\CommonMasters\GeographicInfo\State;
 
 class City extends Model
 {
@@ -31,4 +32,8 @@ class City extends Model
             'GMCTHLastUpdated' => 'datetime:d/m/Y',
             'GMCTHDeletedAt' => 'datetime:d/m/Y'
         ];
+
+         public function statelist(){
+            return $this->belongsTo(State::class,'GMCTHStateId','GMSMHStateId');
+        }
 }

@@ -3,6 +3,7 @@
 namespace App\Models\CommonMasters\GeographicInfo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\CommonMasters\GeographicInfo\Country;
 
 class State extends Model
 {
@@ -32,4 +33,9 @@ class State extends Model
         // {
         //     return $this->hasOne(Country::class, 'GMCMHCountryId', 'GMSMHCountryId');
         // }
+        public function countrylist(){
+            return $this->belongsTo(Country::class,'GMSMHCountryId','GMCMHCountryId');
+        }
+
+
 }

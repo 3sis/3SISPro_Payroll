@@ -6,11 +6,13 @@ use App\Http\Controllers\Controller;
 use App\Models\CommonMasters\BankingMaster\BankName;
 use App\Models\CommonMasters\BankingMaster\BranchName;
 use App\Models\CommonMasters\GeneralMaster\Currency;
+use App\Models\CommonMasters\GeneralMaster\Company;
 // Add Model here
 use App\Models\CommonMasters\GeographicInfo\City;
 use App\Models\CommonMasters\GeographicInfo\Country;
 use App\Models\CommonMasters\GeographicInfo\State;
 use App\Models\t92;
+use App\Models\User;
 use App\Traits\CommonMasters\GeneralMaster\companyDbOperations;
 use App\Traits\GetDescriptions3SIS\getDescriptions3SIS;
 use App\Traits\TablesSchema3SIS\tablesSchema3SIS;
@@ -32,6 +34,12 @@ class CompanyController extends Controller
         // echo 'Data Submitted.11';
         $data = $this->dataTableXLSchemaTrait();
         $menu = $this->menu();
+
+        $list = Company::with('city')->get();
+
+        
+        // return $list;
+
 
         $table_default_theme = config('app.table_default_theme');
         $modal_form_theme = config('app.modal_form_theme');

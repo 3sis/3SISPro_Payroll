@@ -53,9 +53,14 @@ trait getDescriptions3SIS {
     public function getContryStateDesc($id)
     {
         if (!empty($id)) {
+
+
+            // dd($list = City::with('statelist')where('GMCTHCityId', $id)->first());
             $res = [];
-            $city_data = City::where('GMCTHCityId', $id)->first();
-            $state_data = State::where('GMSMHStateId', $city_data->GMCTHStateId)->first();
+            // $city_data = City::where('GMCTHCityId', $id)->first();
+             $city_data = City::with(['statelist.countrylist'])->where('GMCTHCityId', $id)->first()->toArray();
+              dd($city_data);
+            // $state_data = State::where('GMSMHStateId', $city_data->GMCTHStateId)->first();
             $country_data = Country::where('GMCMHCountryId', $city_data->GMCTHCountryId)->first();
             $res['stateId'] = $city_data['GMCTHStateId'];
             $res['stateDesc1'] = $state_data['GMSMHDesc1'];
