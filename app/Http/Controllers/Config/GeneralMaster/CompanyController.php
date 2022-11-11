@@ -33,8 +33,10 @@ class CompanyController extends Controller
         $menu = $this->menu();
 
         $theme_Browser1_3SIS = config('app.theme_Browser1_3SIS');
-        $modal_form_theme = config('app.modal_form_theme');
-        $card_form_theme = config('app.card_form_theme');
+        $theme_Browser2_3SIS = config('app.theme_Browser2_3SIS');
+        $theme_ContentModal1D_3SIS = config('app.theme_ContentModal1D_3SIS');
+        $theme_ContentModal2D_3SIS = config('app.theme_ContentModal2D_3SIS');
+        $theme_Card1D_3SIS = config('app.theme_Card1D_3SIS');
 
         // This is the dropdown list data for View.
         $currency_list = Currency::all();
@@ -44,7 +46,8 @@ class CompanyController extends Controller
         $UserId = Auth::user()->name;
         return view('Config.GeneralMaster.company',
             compact('menu', 'currency_list', 'city_list', 'branch_list',
-                'UserId', 'theme_Browser1_3SIS', 'modal_form_theme', 'card_form_theme'))->with($data);
+                'UserId', 'theme_Browser1_3SIS', 'theme_Browser2_3SIS', 'theme_ContentModal1D_3SIS',
+                'theme_ContentModal2D_3SIS', 'theme_Card1D_3SIS'))->with($data);
     }
     public function BrowserData()
     {

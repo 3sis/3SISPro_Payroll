@@ -2,15 +2,16 @@
 /****************************** Purple Theme - Dark Background******************************/
 
 /* Modal Content: Background */
-.purpleBackgroundModalContent3SIS {
+.purple_ContentModal1D_3SIS {
     background: #301934 !important;
 }
-
-/* Card: Background */
-.purpleBackgroundCard3SIS {
+.purple_ContentModal2D_3SIS {
     background: #32174D !important;
 }
-
+/* Card: Background */
+.purple_Card1D_3SIS {
+    background: #32174D !important;
+}
 /* Card Header: Background */
 .purpleBackgroundCardHeader3SIS {
     background: black !important;

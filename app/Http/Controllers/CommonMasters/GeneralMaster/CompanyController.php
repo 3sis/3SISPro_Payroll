@@ -33,10 +33,7 @@ class CompanyController extends Controller
         $data = $this->dataTableXLSchemaTrait();
         $menu = $this->menu();
 
-        $theme_Browser1_3SIS = config('app.theme_Browser1_3SIS');
-        $theme_Browser2_3SIS = config('app.theme_Browser2_3SIS');
-        $modal_form_theme = config('app.modal_form_theme');
-        $card_form_theme = config('app.card_form_theme');
+
 
         // dd($userTheme);
         $currency_list = Currency::all();
@@ -46,7 +43,7 @@ class CompanyController extends Controller
 
         return view('CommonMasters.GeneralMaster.company',
             compact('menu', 'currency_list', 'city_list', 'branch_list',
-                'UserId', 'theme_Browser1_3SIS', 'modal_form_theme', 'card_form_theme'))->with($data);
+                'UserId', 'theme_Browser1_3SIS', 'theme_ContentModal1D_3SIS', 'theme_Card1D_3SIS'))->with($data);
     }
     public function BrowserData()
     {

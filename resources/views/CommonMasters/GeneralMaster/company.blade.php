@@ -120,7 +120,7 @@
                 <div id="entryModalSmall" class="modal fade UpdateModalBox3SIS" data-backdrop="static"
                     data-keyboard="false" role="dialog" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered 3SISPro-modal-dialog modal-xl" role="document">
-                        <div class='modal-content {{ $modal_form_theme }}'>
+                        <div class='modal-content {{ $theme_ContentModal1D_3SIS }}'>
                             <div class="modal-header" id="registerModalLabel">
                                 <h4 class="modal-title text-light">Master</h4>
                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
@@ -139,7 +139,7 @@
                                 <input type="hidden" name="_token" id="csrfToken" value="{{ csrf_token() }}">
                                 <div class="modal-body">
                                     <div id="toggleAccordion">
-                                        <div class="card {{ $card_form_theme }}">
+                                        <div class="card {{ $theme_Card1D_3SIS }}">
                                             <div class="card-header" style="background: black" id="headingOne1">
                                                 <section class="mb-0 mt-0">
                                                     <div role="menu" class="" data-toggle="collapse"
@@ -322,7 +322,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="card {{ $card_form_theme }}">
+                                        <div class="card {{ $theme_Card1D_3SIS }}">
                                             <div class="card-header" style="background: black" id="headingTwo1">
                                                 <section class="mb-0 mt-0">
                                                     <div role="menu" class="collapsed" data-toggle="collapse"
@@ -420,7 +420,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="card {{ $card_form_theme }}">
+                                        <div class="card {{ $theme_Card1D_3SIS }}">
                                             <div class="card-header" style="background: black" id="headingThree1">
                                                 <section class="mb-0 mt-0">
                                                     <div role="menu" class="collapsed" data-toggle="collapse"
@@ -609,7 +609,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="card {{ $card_form_theme }}">
+                                        <div class="card {{ $theme_Card1D_3SIS }}">
                                             <div class="card-header" style="background: black" id="headingfour1">
                                                 <section class="mb-0 mt-0">
                                                     <div role="menu" class="collapsed" data-toggle="collapse"
@@ -699,7 +699,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="card {{ $card_form_theme }}">
+                                        <div class="card {{ $theme_Card1D_3SIS }}">
                                             <div class="card-header" style="background: black" id="headingfive1">
                                                 <section class="mb-0 mt-0">
                                                     <div role="menu" class="collapsed" data-toggle="collapse"

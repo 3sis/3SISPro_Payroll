@@ -45,7 +45,7 @@
 .purple_Browser2D_3SIS th {
     padding-top: 5px !important;
     padding-bottom: 5px !important;
-     background: #9C27B0 !important;
+     background: #702963 !important;
      height: auto !important;
     font-family: 'Segoe UI', 'Calibri', 'Cambria', 'Cochin', Georgia, Times, 'Times New Roman', serif;
     font-size: 15px;
@@ -57,7 +57,7 @@
 }
 /* Table Detail: Background Color | */
 .purple_Browser2D_3SIS tr {
-    background: #efcef4 !important;
+    background: #de9eea !important;
     /* background: #A1CAF1 !important;              */
 }
 /* Table Detail Cell: Font Size | Font Color | Cell Border color */
@@ -75,7 +75,7 @@
   }
 /* Table Detail Hover Color */
 .purple_Browser2D_3SIS tr:hover {
-    background-color: #de9eea !important;
+    background-color: #CD6EE0 !important;
 }
 /****************************** purple Theme Browser - Dark Background Ends ******************************/
 
