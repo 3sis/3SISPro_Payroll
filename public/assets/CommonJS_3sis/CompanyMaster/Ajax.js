@@ -1,6 +1,5 @@
 $(document).ready(function () {
     $modalTitle = 'Company'
-
     $('#landingPageBrowser3SIS').DataTable({
         buttons: {
             buttons: [
@@ -51,16 +50,16 @@ $(document).ready(function () {
             { "width": "15%", "targets": 4 }
         ]
     });
-
 });
 $('#add_Data').click(function () {
+    $("#userRecordInfo").hide();
     $("#GMCOHCompanyId").attr("readonly", false);
     $('#currenyId').val('').change();
     fnReinstateFormControl('0');
 });
 // When edit button is pushed
 $(document).on('click', '.edit', function () {
-
+    $("#userRecordInfo").show();
     var id = $(this).attr('id');
     $.ajax({
         // CopyChange
@@ -69,6 +68,7 @@ $(document).on('click', '.edit', function () {
         data: { id: id },
         dataType: 'json',
         success: function (data) {
+
             // General Info
             $('#GMCOHUniqueId').val(data.GMCOHUniqueId);
             $('#GMCOHCompanyId').val(data.GMCOHCompanyId);
@@ -88,7 +88,7 @@ $(document).on('click', '.edit', function () {
             // How to pull Id in dropdown in Edit Mode - @Krishna
 
             $('#currenyId').val(data.GMCOHCurrenyId).change();
-            $('#cityId').val(data.GMCOHCityId).change();
+            $('#cityId').val(data.GMCOHCityId);
             $('#stateDesc1').val(data.GMCOHStateId);
             $('#countryDesc1').val(data.GMCOHCountryId);
 
@@ -104,23 +104,31 @@ $(document).on('click', '.edit', function () {
             $('#GMCOHCINNo').val(data.GMCOHCINNo);
             $('#GMCOHPANNo').val(data.GMCOHPANNo);
             $('#GMCOHGSTNo').val(data.GMCOHGSTNo);
-            // $('#GMCOHESTDate').val(establishmentDte);
+            $('#GMCOHESTDate').val(formattedDate(new Date(data.GMCOHLastCreated)));
             $('#GMCOHFolderName').val(data.GMCOHFolderName);
             $('#GMCOHImageFileName').val(data.GMCOHImageFileName);
             // Banking Info
             $('#GMCOHBankId1').val(data.GMCOHBankId1);
+            $('#bankName1').val(data.bankDesc1);
             // console.log('BankId1 : '+ data.GMCOHBankId1);
-            $('#GMCOHBranchId1').val(data.GMCOHBranchId1);
+            // $('#branchId1').val(data.GMCOHBranchId1).trigger();
+            $('#branchId1').children("option:selected").val(data.GMCOHBranchId1);
+
             $('#GMCOHIFSId1').val(data.GMCOHIFSId1);
             $('#GMCOHBankAccNo1').val(data.GMCOHBankAccNo1);
             $('#GMCOHBankAcName1').val(data.GMCOHBankAcName1);
             $('#GMCOHBankId2').val(data.GMCOHBankId2);
+            $('#bankName2').val(data.bankDesc2);
             $('#GMCOHBranchId2').val(data.GMCOHBranchId2);
             $('#GMCOHIFSId2').val(data.GMCOHIFSId2);
             $('#GMCOHBankAccNo2').val(data.GMCOHBankAccNo2);
             $('#GMCOHBankAcName2').val(data.GMCOHBankAcName2);
             // User Info
             $('#GMCOHUser').val(data.GMCOHUser);
+
+            $('#GMCOHLastCreated').val(formattedDate(new Date(data.GMCOHLastCreated)));
+            $('#GMCOHLastUpdated').val(formattedDate(new Date(data.GMCOHLastUpdated)));
+
             $("#GMCOHCompanyId").attr("readonly", true);
             $('#entryModalSmall').modal('show');
 
@@ -267,9 +275,15 @@ $(document).on('click', '.restore', function () {
 });
 // restore Ends
 
-$('#cityId').change(function () {
+$('#cityId').change(function (e) {
     let id = $(this).val();
-    alert('state');
+    // alert(e);
+    // console.log(e);
+    // if (e.handled == true) {
+    //     e.handled = false;
+    //     return;
+    // }
+
     $.ajax({
         url: "/city/dropdown",
         type: 'post',
@@ -290,6 +304,8 @@ $('#cityId').change(function () {
 // Bank branch dropdown
 $('#branchId1').change(function () {
     let id = $(this).val();
+    alert('branchId1');
+    console.log(id);
     $.ajax({
         url: "/bankBranch/branchDetail",
         type: 'post',

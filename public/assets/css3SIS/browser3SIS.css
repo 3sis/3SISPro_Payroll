@@ -1,5 +1,87 @@
 /* 3SIS Customized Table Look and Feel */
 
+/****************************** Purple Theme Browser - Dark Background******************************/
+/* Landing Page Browser*/
+/* Table Header: Background | Font Color | */
+.purple_Browser1D_3SIS th {
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+     background: #9C27B0 !important;
+     height: auto !important;
+    font-family: 'Segoe UI', 'Calibri', 'Cambria', 'Cochin', Georgia, Times, 'Times New Roman', serif;
+    font-size: 15px;
+    font-weight: bold;
+    color: #ebdeec !important;
+    border: 1px solid #FFFFFF !important;
+    border-collapse: collapse !important;
+    white-space: nowrap;
+}
+/* Table Detail: Background Color | */
+.purple_Browser1D_3SIS tr {
+    background: #efcef4 !important;
+    /* background: #A1CAF1 !important;              */
+}
+/* Table Detail Cell: Font Size | Font Color | Cell Border color */
+.purple_Browser1D_3SIS td {
+    padding-top: 2px !important;
+    padding-bottom: 2px !important;
+    font-family: 'Segoe UI', 'Calibri', 'Cambria', 'Cochin', Georgia, Times, 'Times New Roman', serif;
+    font-size: 13px !important;
+    color: black !important;
+    font-weight: bold;
+    border: 1px solid #FFFFFF !important;
+    overflow: hidden;
+    white-space: nowrap;
+    border-collapse: collapse !important;
+  }
+
+/* Table Detail Hover Color */
+.purple_Browser1D_3SIS tr:hover {
+    background-color: #de9eea !important;
+}
+
+/* Undelte Browser*/
+/* Table Header: Background | Font Color | */
+.purple_Browser2D_3SIS th {
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+     background: #9C27B0 !important;
+     height: auto !important;
+    font-family: 'Segoe UI', 'Calibri', 'Cambria', 'Cochin', Georgia, Times, 'Times New Roman', serif;
+    font-size: 15px;
+    font-weight: bold;
+    color: #ebdeec !important;
+    border: 1px solid #FFFFFF !important;
+    border-collapse: collapse !important;
+    white-space: nowrap;
+}
+/* Table Detail: Background Color | */
+.purple_Browser2D_3SIS tr {
+    background: #efcef4 !important;
+    /* background: #A1CAF1 !important;              */
+}
+/* Table Detail Cell: Font Size | Font Color | Cell Border color */
+.purple_Browser2D_3SIS td {
+    padding-top: 2px !important;
+    padding-bottom: 2px !important;
+    font-family: 'Segoe UI', 'Calibri', 'Cambria', 'Cochin', Georgia, Times, 'Times New Roman', serif;
+    font-size: 13px !important;
+    color: black !important;
+    font-weight: bold;
+    border: 1px solid #FFFFFF !important;
+    overflow: hidden;
+    white-space: nowrap;
+    border-collapse: collapse !important;
+  }
+/* Table Detail Hover Color */
+.purple_Browser2D_3SIS tr:hover {
+    background-color: #de9eea !important;
+}
+/****************************** purple Theme Browser - Dark Background Ends ******************************/
+
+
+
+
 /****************************** Blue Theme Browser - Dark Background******************************/
 
 /* Table Header: Background | Font Color | */
@@ -41,46 +123,6 @@
 }
 /****************************** Blue Theme Browser - Dark Background Ends ******************************/
 
-/****************************** Purple Theme Browser - Dark Background******************************/
-
-/* Table Header: Background | Font Color | */
-.purpleBrowserOnDark3SIS th {
-    padding-top: 5px !important;
-    padding-bottom: 5px !important;
-     background: #9C27B0 !important;
-     height: auto !important;
-    font-family: 'Segoe UI', 'Calibri', 'Cambria', 'Cochin', Georgia, Times, 'Times New Roman', serif;
-    font-size: 15px;
-    font-weight: bold;
-    color: #ebdeec !important;
-    border: 1px solid #FFFFFF !important;
-    border-collapse: collapse !important;
-    white-space: nowrap;
-}
-/* Table Detail: Background Color | */
-.purpleBrowserOnDark3SIS tr {
-    background: #efcef4 !important;
-    /* background: #A1CAF1 !important;              */
-}
-/* Table Detail Cell: Font Size | Font Color | Cell Border color */
-.purpleBrowserOnDark3SIS td {
-    padding-top: 2px !important;
-    padding-bottom: 2px !important;
-    font-family: 'Segoe UI', 'Calibri', 'Cambria', 'Cochin', Georgia, Times, 'Times New Roman', serif;
-    font-size: 13px !important;
-    color: black !important;
-    font-weight: bold;
-    border: 1px solid #FFFFFF !important;
-    overflow: hidden;
-    white-space: nowrap;
-    border-collapse: collapse !important;
-  }
-
-/* Table Detail Hover Color */
-.purpleBrowserOnDark3SIS tr:hover {
-    background-color: #de9eea !important;
-}
-/****************************** purple Theme Browser - Dark Background Ends ******************************/
 
 /****************************** green Theme Browser - Dark Background******************************/
 

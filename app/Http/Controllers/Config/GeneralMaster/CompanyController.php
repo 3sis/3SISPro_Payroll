@@ -1,32 +1,31 @@
 <?php
 
-namespace App\Http\Controllers\CommonMasters\GeneralMaster;
+namespace App\Http\Controllers\Config\GeneralMaster;
 
 use App\Http\Controllers\Controller;
-use App\Models\CommonMasters\BankingMaster\BankName;
-use App\Models\CommonMasters\BankingMaster\BranchName;
-use App\Models\CommonMasters\GeneralMaster\Currency;
-// Add Model here
-use App\Models\CommonMasters\GeographicInfo\City;
-use App\Models\CommonMasters\GeographicInfo\Country;
-use App\Models\CommonMasters\GeographicInfo\State;
+use App\Models\Config\Banking\BranchName;
+use App\Models\Config\GeneralMaster\Currency;
+use App\Models\Config\Geographic\City;
 use App\Models\t92;
-use App\Traits\CommonMasters\GeneralMaster\companyDbOperations;
-use App\Traits\GetDescriptions3SIS\getDescriptions3SIS;
+
+// Add Model here
+
+use App\Traits\Config\GeneralMaster\companyDbOperations;
+use App\Traits\GetDescriptions3SIS\getGeographicDesc;
+use App\Traits\GetDescriptions3SIS\getBankingDesc;
 use App\Traits\TablesSchema3SIS\tablesSchema3SIS;
 use DataTables;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Validator;
 
 class CompanyController extends Controller
 {
-    use companyDbOperations, tablesSchema3SIS, getDescriptions3SIS;
-
+    use companyDbOperations, tablesSchema3SIS, getGeographicDesc, getBankingDesc;
     public function menu()
     {
         return $menu = t92::tree();
     }
-
     public function Index()
     {
         // echo 'Data Submitted.11';
@@ -34,25 +33,24 @@ class CompanyController extends Controller
         $menu = $this->menu();
 
         $theme_Browser1_3SIS = config('app.theme_Browser1_3SIS');
-        $theme_Browser2_3SIS = config('app.theme_Browser2_3SIS');
         $modal_form_theme = config('app.modal_form_theme');
         $card_form_theme = config('app.card_form_theme');
 
-        // dd($userTheme);
+        // This is the dropdown list data for View.
         $currency_list = Currency::all();
         $city_list = City::all();
         $branch_list = BranchName::all();
-        $UserId = \Auth::user()->name;
 
-        return view('CommonMasters.GeneralMaster.company',
+        $UserId = Auth::user()->name;
+        return view('Config.GeneralMaster.company',
             compact('menu', 'currency_list', 'city_list', 'branch_list',
                 'UserId', 'theme_Browser1_3SIS', 'modal_form_theme', 'card_form_theme'))->with($data);
     }
     public function BrowserData()
     {
-        $BrowserDataTable = $this->gmcmBrowserDataTrait();
+        $landingPageBrowser = $this->companyBrowserTrait();
 
-        return DataTables::of($BrowserDataTable)
+        return DataTables::of($landingPageBrowser)
             ->addColumn('action', function ($company) {
                 // return '<a href="#" class="btn mr-1 btnEditRec3SIS edit" id="' . $company->GMCOHUniqueId . '">Edit
                 //         <i class="fas fa-edit fa-xs"></i>
@@ -107,13 +105,13 @@ class CompanyController extends Controller
         } else {
             // When add button is pushed
             if ($request->get('button_action') == 'insert') {
-                $this->gmcmAddUpdateTrait($request);
+                $this->addUpdateCompanyTrait($request);
                 return response()->json(['status' => 1, 'Id' => $request->get('GMCOHCompanyId'), 'Desc1' => $request->get('GMCOHDesc1'),
                     'masterName' => 'Company ', 'updateMode' => 'Added']);
             }
             // When edit button is pushed
             if ($request->get('button_action') == 'update') {
-                $this->gmcmAddUpdateTrait($request);
+                $this->addUpdateCompanyTrait($request);
                 return response()->json(['status' => 1, 'Id' => $request->get('GMCOHCompanyId'), 'Desc1' => $request->get('GMCOHDesc1'),
                     'masterName' => 'Company ', 'updateMode' => 'Updated']);
             }
@@ -121,19 +119,19 @@ class CompanyController extends Controller
     }
     public function Fetchdata(Request $request)
     {
-        $fethchedData = $this->gmcmFethchEditedDataTrait($request);
+        $fethchedData = $this->fethchCompanyDataTrait($request);
         echo json_encode($fethchedData);
     }
     public function DeleteData(Request $request)
     {
-        $Id = $this->gmcmDeleteRecordTrait($request);
+        $Id = $this->deleteCompanyTrait($request);
         return response()->json(['status' => 1, 'Id' => $Id,
             'Desc1' => '', 'masterName' => 'Country ', 'updateMode' => 'Deleted']);
     }
     public function BrowserDeletedRecords()
     {
         //Eloquent way - Model is must
-        $browserDeletedRecords = $this->gmcmBrowserDeletedRecordsTrait();
+        $browserDeletedRecords = $this->deletedRecordscompanyBrowserTrait();
         return DataTables::of($browserDeletedRecords)
             ->addColumn('action', function ($DeletedCountry) {
                 return '<a href="#" class="btn mr-1 btnEditRec3SIS restore" id="' . $DeletedCountry->GMCOHUniqueId . '">Restore
@@ -144,25 +142,32 @@ class CompanyController extends Controller
     }
     public function RestoreDeletedRecord(Request $request)
     {
-        $Id = $this->gmcmUnDeleteRecordTrait($request);
+        $Id = $this->unDeleteCompanyRecordTrait($request);
         return response()->json(['status' => 1, 'Id' => $Id,
             'Desc1' => '', 'masterName' => 'Company ', 'updateMode' => 'Restored']);
     }
     // City Details
     public function getcityStateDropDown(Request $request)
     {
-        $CityDetails = $this->getContryStateDesc($request->id);
+        $City_Detail = $this->getCityDesc($request->id);
+        $State_Detail = $this->getStateDesc($City_Detail->GMCTHStateId);
+        $Country_Detail = $this->getCountryDesc($City_Detail->GMCTHCountryId);
+        // dd($City_Detail);
+        $geographicDetail = [];
+        $geographicDetail['stateId'] = $City_Detail['GMCTHStateId'];
+        $geographicDetail['stateDesc1'] = $State_Detail['GMSMHDesc1'];
+        $geographicDetail['countryId'] = $City_Detail['GMCTHCountryId'];
+        $geographicDetail['countryDesc1'] = $Country_Detail['GMCMHDesc1'];
+        $CityDetails=$geographicDetail;
         return response()->json($CityDetails);
     }
-
     // Branch Details
     public function getBankBranch(Request $request)
     {
-        $branchDetails = $this->getBankBranch1($request->id);
+        $branchDetails = $this->getBranchDetails($request->id);
+        // dd($branchDetails);
         return response()->json($branchDetails);
     }
-
-
     //tab design test
     public function Tab()
     {
