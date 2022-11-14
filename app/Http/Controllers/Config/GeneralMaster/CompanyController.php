@@ -81,8 +81,8 @@ class CompanyController extends Controller
     }
     public function PostData(Request $request)
     {
-        echo 'Data Submitted.';
-        return $request->input();
+        // echo 'Data Submitted.';
+        // return $request->input();
 
         if ($request->get('button_action') == 'insert') {
             $validator = Validator::make($request->all(), [
@@ -153,17 +153,15 @@ class CompanyController extends Controller
     // City Details
     public function getcityStateDropDown(Request $request)
     {
-        $City_Detail = $this->getCityDesc($request->id);
-        $State_Detail = $this->getStateDesc($City_Detail->GMCTHStateId);
-        $Country_Detail = $this->getCountryDesc($City_Detail->GMCTHCountryId);
-        // dd($City_Detail);
-        $geographicDetail = [];
-        $geographicDetail['stateId'] = $City_Detail['GMCTHStateId'];
-        $geographicDetail['stateDesc1'] = $State_Detail['GMSMHDesc1'];
-        $geographicDetail['countryId'] = $City_Detail['GMCTHCountryId'];
-        $geographicDetail['countryDesc1'] = $Country_Detail['GMCMHDesc1'];
-        $CityDetails=$geographicDetail;
-        return response()->json($CityDetails);
+        $City_Detail = collect(City::with('fnState','fnCountry')->where('GMCTHCityId', $request->id)->first())->collapse();
+
+        $geographicDetail['stateId'] = $City_Detail['GMSMHStateId'];
+        $geographicDetail['stateDesc1'] = $City_Detail['GMSMHDesc1'];
+        $geographicDetail['countryId'] = $City_Detail['GMCMHCountryId'];
+        $geographicDetail['countryDesc1'] = $City_Detail['GMCMHDesc1'];
+
+        return response()->json($geographicDetail);
+
     }
     // Branch Details
     public function getBankBranch(Request $request)

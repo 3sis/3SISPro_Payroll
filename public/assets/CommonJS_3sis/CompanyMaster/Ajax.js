@@ -60,9 +60,8 @@ $('#add_Data').click(function () {
     fnReinstateFormControl('0');
 });
 function fnInitializeAllDropdowns(){
-    // $('#currenyId').val('INR').change();
-    // alert('Add Alert');
-    // $('#quantityId').val('2').change();
+    $('#currenyId').val('INR').change();
+    $('#quantityId').val('2').change();
     $('#valueId').val('2').change();
     $('#cityId').val('').change();
     $('#branchId1').val('').change();
@@ -158,8 +157,8 @@ $(document).on('click', '.edit', function () {
 // When submit button is pushed
 $('#singleLevelDataEntryForm').on('submit', function (event) {
     event.preventDefault();
-    console.log($("#singleLevelDataEntryForm").serialize());
-    return;
+    // console.log($("#singleLevelDataEntryForm").serialize());
+    // return;
     $.ajax({
         url: $(this).attr('action'),
         method: $(this).attr('method'),

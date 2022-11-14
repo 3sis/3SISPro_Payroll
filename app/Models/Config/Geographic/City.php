@@ -4,6 +4,8 @@ namespace App\Models\Config\Geographic;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Config\Geographic\State;
+use App\Models\Config\Geographic\Country;
 
 class City extends Model
 {
@@ -31,4 +33,12 @@ class City extends Model
             'GMCTHLastUpdated' => 'datetime:d/m/Y',
             'GMCTHDeletedAt' => 'datetime:d/m/Y'
         ];
+        public function fnState()
+        {
+            return $this->hasOne(State::class, 'GMSMHStateId', 'GMCTHStateId');
+        }
+        public function fnCountry()
+        {
+            return $this->hasOne(Country::class, 'GMCMHCountryId', 'GMCTHCountryId');
+        }
 }
