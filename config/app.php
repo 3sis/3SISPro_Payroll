@@ -1,9 +1,16 @@
 <?php
 
 return [
-    'table_default_theme' => env('TABLE_DEFAULT_THEME', 'purpleBrowserOnDark3SIS'),
-    'modal_form_theme' => env('MODAL_FORM_THEME', 'purpleBackgroundModalContent3SIS'),
-    'card_form_theme' => env('CARD_FORM_THEME', 'purpleBackgroundCard3SIS'),
+    /*Landing Page Browser*/
+    // 'theme_Browser1_3SIS' => env('TABLE_DEFAULT_THEME', 'purple_Browser1D_3SIS'),
+    'theme_Browser1_3SIS' => env('THEME_BROWSER1_3SIS', 'purple_Browser1D_3SIS'),
+    /*Undelete Page Browser*/
+    'theme_Browser2_3SIS' => env('THEME_BROWSER2_3SIS', 'purple_Browser2D_3SIS'),
+    /*Modal Content background*/
+    'theme_ContentModal1D_3SIS' => env('THEME_CONTENT_MODAL1D_3SIS', 'purple_ContentModal1D_3SIS'),
+    'theme_ContentModal2D_3SIS' => env('THEME_CONTENT_MODAL2D_3SIS', 'purple_ContentModal2D_3SIS'),
+    /*Card background*/
+    'theme_Card1D_3SIS' => env('CARD_FORM_THEME', 'purple_Card1D_3SIS'),
     /*
     |--------------------------------------------------------------------------
     | Application Name

@@ -1,13 +1,13 @@
 <?php
-namespace app\Traits\CommonMasters\GeneralMaster;
+namespace app\Traits\Config\GeneralMaster;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Carbon;
-use App\Models\CommonMasters\GeneralMaster\Company;
-// GICM : Geographic Info - Company Master
+use App\Models\Config\GeneralMaster\Company;
+
 trait companyDbOperations {
 
-     public function gmcmBrowserDataTrait()
+     public function companyBrowserTrait()
      {
          return $browserData = Company::where('GMCOHMarkForDeletion', 0)
          ->get([
@@ -22,7 +22,7 @@ trait companyDbOperations {
             'GMCOHLastUpdated'
          ]);
      }
-     public function gmcmAddUpdateTrait($request)
+     public function addUpdateCompanyTrait($request)
      {
         if($request->get('button_action') == 'insert') {
             $Company = new Company;
@@ -82,7 +82,7 @@ trait companyDbOperations {
         }
         return $UniqueId;
      }
-     public function gmcmFethchEditedDataTrait($request)
+     public function fethchCompanyDataTrait($request)
      {
         $GMCOHUniqueId = $request->input('id');
         $Company = Company::find($GMCOHUniqueId);
@@ -134,7 +134,7 @@ trait companyDbOperations {
             'GMCOHLastUpdated'          =>  $Company->GMCOHLastUpdated
         );
      }
-     public function gmcmDeleteRecordTrait($request)
+     public function deleteCompanyTrait($request)
      {
         $UniqueId = $request->input('id');
         $Company = Company::find($UniqueId);
@@ -145,7 +145,7 @@ trait companyDbOperations {
         $Company->save();
         return $Company->GMCOHCompanyId;
      }
-     public function gmcmBrowserDeletedRecordsTrait()
+     public function deletedRecordscompanyBrowserTrait()
      {
          return $browserDeletedRecords = Company::
          select(
@@ -156,7 +156,7 @@ trait companyDbOperations {
              // This is AND condition in wherer to apply OR second where should be orwhere
          ->where('GMCOHMarkForDeletion', 1);
      }
-     public function gmcmUnDeleteRecordTrait($request)
+     public function unDeleteCompanyRecordTrait($request)
      {
          $UniqueId = $request->input('id');
          //Eloquent Way

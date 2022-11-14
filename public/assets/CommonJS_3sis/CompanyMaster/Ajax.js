@@ -1,6 +1,5 @@
 $(document).ready(function () {
     $modalTitle = 'Company'
-
     $('#landingPageBrowser3SIS').DataTable({
         buttons: {
             buttons: [
@@ -51,17 +50,28 @@ $(document).ready(function () {
             { "width": "15%", "targets": 4 }
         ]
     });
-
 });
 $('#add_Data').click(function () {
+    $("#userRecordInfo").hide();
     $("#GMCOHCompanyId").attr("readonly", false);
-    $('#currenyId').val('').change();
+    //Initialize all droopdowns in add mode
+    fnInitializeAllDropdowns();
+    //Initialize all screen fields in add mode
     fnReinstateFormControl('0');
 });
+function fnInitializeAllDropdowns(){
+    $('#currenyId').val('INR').change();
+    $('#quantityId').val('2').change();
+    $('#valueId').val('2').change();
+    $('#cityId').val('').change();
+    $('#branchId1').val('').change();
+    $('#branchId2').val('').change();
+};
 // When edit button is pushed
 $(document).on('click', '.edit', function () {
-
+    $("#userRecordInfo").show();
     var id = $(this).attr('id');
+    // alert('Edit alert')
     $.ajax({
         // CopyChange
         url: "/company/Master/Update",
@@ -69,6 +79,7 @@ $(document).on('click', '.edit', function () {
         data: { id: id },
         dataType: 'json',
         success: function (data) {
+
             // General Info
             $('#GMCOHUniqueId').val(data.GMCOHUniqueId);
             $('#GMCOHCompanyId').val(data.GMCOHCompanyId);
@@ -77,9 +88,9 @@ $(document).on('click', '.edit', function () {
             $('#GMCOHBiDesc').val(data.GMCOHBiDesc);
             $('#GMCOHNickName').val(data.GMCOHNickName);
             $('#GMCOHTagLine').val(data.GMCOHTagLine);
-            $('#GMCOHCurrenyId').val(data.GMCOHCurrenyId);
-            $('#GMCOHDecimalPositionQty').val(data.GMCOHDecimalPositionQty);
-            $('#GMCOHDecimalPositionValue').val(data.GMCOHDecimalPositionValue);
+            // $('#GMCOHCurrenyId').val(data.GMCOHCurrenyId);
+            $('#quantityId').val(data.GMCOHDecimalPositionQty).change();
+            $('#valueId').val(data.GMCOHDecimalPositionValue).change();
             $('#GMCOHLandLine').val(data.GMCOHLandLine);
             $('#GMCOHMobileNo').val(data.GMCOHMobileNo);
             $('#GMCOHEmail').val(data.GMCOHEmail);
@@ -88,7 +99,13 @@ $(document).on('click', '.edit', function () {
             // How to pull Id in dropdown in Edit Mode - @Krishna
 
             $('#currenyId').val(data.GMCOHCurrenyId).change();
+
+            // $("#cityId option").filter(function() {
+            //     $(this).text() == data.GMCOHCityId;
+            // }).prop('selected', true);
             $('#cityId').val(data.GMCOHCityId).change();
+            // $("#iddropdown").dropdown('set selected', ['${product.category}'] );
+
             $('#stateDesc1').val(data.GMCOHStateId);
             $('#countryDesc1').val(data.GMCOHCountryId);
 
@@ -104,22 +121,31 @@ $(document).on('click', '.edit', function () {
             $('#GMCOHCINNo').val(data.GMCOHCINNo);
             $('#GMCOHPANNo').val(data.GMCOHPANNo);
             $('#GMCOHGSTNo').val(data.GMCOHGSTNo);
-            // $('#GMCOHESTDate').val(establishmentDte);
+            $('#GMCOHESTDate').val(formattedDate(new Date(data.GMCOHLastCreated)));
             $('#GMCOHFolderName').val(data.GMCOHFolderName);
             $('#GMCOHImageFileName').val(data.GMCOHImageFileName);
             // Banking Info
             $('#GMCOHBankId1').val(data.GMCOHBankId1);
-            $('#GMCOHBranchId1').val(data.GMCOHBranchId1);
+            $('#bankName1').val(data.bankDesc1);
+            // console.log('BankId1 : '+ data.GMCOHBankId1);
+            $('#branchId1').val(data.GMCOHBranchId1).change();
+            // $('#branchId1').children("option:selected").val(data.GMCOHBranchId1);
+
             $('#GMCOHIFSId1').val(data.GMCOHIFSId1);
             $('#GMCOHBankAccNo1').val(data.GMCOHBankAccNo1);
             $('#GMCOHBankAcName1').val(data.GMCOHBankAcName1);
             $('#GMCOHBankId2').val(data.GMCOHBankId2);
-            $('#GMCOHBranchId2').val(data.GMCOHBranchId2);
+            $('#bankName2').val(data.bankDesc2);
+            $('#branchId2').val(data.GMCOHBranchId2).change();
             $('#GMCOHIFSId2').val(data.GMCOHIFSId2);
             $('#GMCOHBankAccNo2').val(data.GMCOHBankAccNo2);
             $('#GMCOHBankAcName2').val(data.GMCOHBankAcName2);
             // User Info
             $('#GMCOHUser').val(data.GMCOHUser);
+
+            $('#GMCOHLastCreated').val(formattedDate(new Date(data.GMCOHLastCreated)));
+            $('#GMCOHLastUpdated').val(formattedDate(new Date(data.GMCOHLastUpdated)));
+
             $("#GMCOHCompanyId").attr("readonly", true);
             $('#entryModalSmall').modal('show');
 
@@ -131,6 +157,8 @@ $(document).on('click', '.edit', function () {
 // When submit button is pushed
 $('#singleLevelDataEntryForm').on('submit', function (event) {
     event.preventDefault();
+    // console.log($("#singleLevelDataEntryForm").serialize());
+    // return;
     $.ajax({
         url: $(this).attr('action'),
         method: $(this).attr('method'),
@@ -266,7 +294,8 @@ $(document).on('click', '.restore', function () {
 });
 // restore Ends
 
-$('#cityId').change(function () {
+$('#cityId').on('change', (function (e) {
+    // alert('Shishir');
     let id = $(this).val();
     $.ajax({
         url: "/city/dropdown",
@@ -282,12 +311,13 @@ $('#cityId').change(function () {
             $('#countryDesc1').val(response.countryDesc1);
         }
     })
-});
-
+}));
 
 // Bank branch dropdown
 $('#branchId1').change(function () {
     let id = $(this).val();
+    // alert('branchId1');
+    console.log(id);
     $.ajax({
         url: "/bankBranch/branchDetail",
         type: 'post',
@@ -302,7 +332,24 @@ $('#branchId1').change(function () {
         }
     })
 });
+// Bank branch dropdown
+$('#branchId2').change(function () {
+    let id = $(this).val();
 
+    $.ajax({
+        url: "/bankBranch/branchDetail",
+        type: 'post',
+        data: 'id=' + id,
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        success: function (response) {
+            $('#GMCOHBankId2').val(response.BankId);
+            $('#bankName2').val(response.bankDesc1);
+            $('#GMCOHIFSId2').val(response.IFSCId);
+        }
+    })
+});
 $('#currenyId,#quantityId,#valueId,#cityId,#branchId1,#branchId2').select2({
     dropdownParent: $('#entryModalSmall')
 });

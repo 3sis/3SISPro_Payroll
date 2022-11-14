@@ -10,10 +10,6 @@
                     <button type='button' name='Undo' id='Undelete_Data' class='btn btnUnDeleteRec3SIS'>
                         <i class="fa fa-undo  m-1" style="font-size:20px"></i>
                     </button>
-
-                    {{-- <button type='button' name='Undo' id='Undelete_Data' class='btn btnUnDeleteRec3SIS'>Undo
-                        <i class="fas fa-undo-alt fa-sm ml-1"> </i>
-                    </button> --}}
                     <button type='button' name='add' id='add_Data' class='btn btnAddRec3SIS'>
                         <i class="fa fa-plus-square m-1" style="font-size:20px"></i>
                     </button>
@@ -42,9 +38,9 @@
                     aria-labelledby="registerModalLabel" aria-hidden="true" style='margin-top:40px'
                     data-backdrop="static">
                     <div class='modal-dialog modal-dialog-centered modal-lg'role="document">
-                        <div class='modal-content'>
+                        <div class='modal-content {{ $theme_ContentModal2D_3SIS }}'>
                             <div class="modal-header" id="registerModalLabel">
-                                <h4 class="modal-title"></h4>
+                                <h4 class="modal-title" style="color:white"></h4>
                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
                                     <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
                                         height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -59,8 +55,7 @@
                             <div class='modal-body'>
                                 <div class="container-fluid">
                                     <div class="table-responsive">
-                                        <table id="html-extension3SIS" class="table table-hover non-hover"
-                                            style="width:100%">
+                                        <table id="html-extension3SIS" class="{{ $theme_Browser2_3SIS }} style="width:100%">
                                             <thead>
                                                 <tr>
                                                     <th title="Company Master">ID</th>
@@ -237,11 +232,12 @@
                                                                 <span class="error-text currenyId_error text-danger"
                                                                     style='float:right;'></span>
                                                                 <select id='currenyId' name='currenyId'
-                                                                    style='width: 100%;' class="form-control select2">
+                                                                    style='width: 100%;'>
                                                                     <option value=''>-- Select Currency Id --
                                                                     </option>
                                                                     @foreach ($currency_list as $currency)
-                                                                        <option value='{{ $currency->GMCRHUniqueId }}'>
+                                                                        <option value='{{ $currency->GMCRHCurrencyId }}'
+                                                                            <option {{ ($currency->GMCRHCurrencyId) == 'INR' ? 'selected' : '' }}>
                                                                             {{ $currency->GMCRHCurrencyId }}</option>
                                                                     @endforeach
                                                                 </select>
@@ -256,7 +252,7 @@
                                                                     style='width: 100%;'>
                                                                     <option value='0'>0</option>
                                                                     <option value='1'>1</option>
-                                                                    <option value='2'>2</option>
+                                                                    <option selected='selected' value='2'>2</option>
                                                                     <option value='3'>3</option>
                                                                     <option value='4'>4</option>
                                                                     <option value='5'>5</option>
@@ -272,7 +268,7 @@
                                                                     style='width: 100%;'>
                                                                     <option value='0'>0</option>
                                                                     <option value='1'>1</option>
-                                                                    <option value='2'>2</option>
+                                                                    <option selected='selected' value='2'>2</option>
                                                                     <option value='3'>3</option>
                                                                     <option value='4'>4</option>
                                                                     <option value='5'>5</option>
@@ -699,7 +695,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="card {{ $theme_Card1D_3SIS }}">
+                                        <div id='userRecordInfo' class="card {{ $theme_Card1D_3SIS }}">
                                             <div class="card-header" style="background: black" id="headingfive1">
                                                 <section class="mb-0 mt-0">
                                                     <div role="menu" class="collapsed" data-toggle="collapse"

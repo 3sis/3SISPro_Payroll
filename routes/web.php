@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\CommonMasters\GeneralMaster\CompanyController;
+use App\Http\Controllers\Config\GeneralMaster\CompanyController;
 use App\Http\Controllers\Payroll\GeneralMaster\BloodGroupController;
 // Payroll General Master
 use App\Http\Controllers\Payroll\GeneralMaster\SalutationController;

@@ -1,4 +1,25 @@
 /* 3SIS Customized Entry Screen Look and Feel */
+/****************************** Purple Theme - Dark Background******************************/
+
+/* Modal Content: Background */
+.purple_ContentModal1D_3SIS {
+    background: #301934 !important;
+}
+.purple_ContentModal2D_3SIS {
+    background: #32174D !important;
+}
+/* Card: Background */
+.purple_Card1D_3SIS {
+    background: #32174D !important;
+}
+/* Card Header: Background */
+.purpleBackgroundCardHeader3SIS {
+    background: black !important;
+}
+/****************************** Purple Theme - Dark Background ******************************/
+
+
+
 
 /****************************** Blue Theme - Dark Background******************************/
 
@@ -14,23 +35,6 @@
 
 /* Card Header: Background */
 .blueBackgroundCardHeader3SIS {
-    background: black !important;
-}
-
-/****************************** Purple Theme - Dark Background******************************/
-
-/* Modal Content: Background */
-.purpleBackgroundModalContent3SIS {
-    background: #301934 !important;
-}
-
-/* Card: Background */
-.purpleBackgroundCard3SIS {
-    background: #32174D !important;
-}
-
-/* Card Header: Background */
-.purpleBackgroundCardHeader3SIS {
     background: black !important;
 }
 
