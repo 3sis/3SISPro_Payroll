@@ -54,13 +54,25 @@ $(document).ready(function () {
 $('#add_Data').click(function () {
     $("#userRecordInfo").hide();
     $("#GMCOHCompanyId").attr("readonly", false);
-    $('#currenyId').val('').change();
+    //Initialize all droopdowns in add mode
+    fnInitializeAllDropdowns();
+    //Initialize all screen fields in add mode
     fnReinstateFormControl('0');
 });
+function fnInitializeAllDropdowns(){
+    // $('#currenyId').val('INR').change();
+    // alert('Add Alert');
+    // $('#quantityId').val('2').change();
+    $('#valueId').val('2').change();
+    $('#cityId').val('').change();
+    $('#branchId1').val('').change();
+    $('#branchId2').val('').change();
+};
 // When edit button is pushed
 $(document).on('click', '.edit', function () {
     $("#userRecordInfo").show();
     var id = $(this).attr('id');
+    // alert('Edit alert')
     $.ajax({
         // CopyChange
         url: "/company/Master/Update",
@@ -77,7 +89,7 @@ $(document).on('click', '.edit', function () {
             $('#GMCOHBiDesc').val(data.GMCOHBiDesc);
             $('#GMCOHNickName').val(data.GMCOHNickName);
             $('#GMCOHTagLine').val(data.GMCOHTagLine);
-            $('#GMCOHCurrenyId').val(data.GMCOHCurrenyId);
+            // $('#GMCOHCurrenyId').val(data.GMCOHCurrenyId);
             $('#quantityId').val(data.GMCOHDecimalPositionQty).change();
             $('#valueId').val(data.GMCOHDecimalPositionValue).change();
             $('#GMCOHLandLine').val(data.GMCOHLandLine);
@@ -88,7 +100,13 @@ $(document).on('click', '.edit', function () {
             // How to pull Id in dropdown in Edit Mode - @Krishna
 
             $('#currenyId').val(data.GMCOHCurrenyId).change();
-            $('#cityId').val(data.GMCOHCityId);
+
+            // $("#cityId option").filter(function() {
+            //     $(this).text() == data.GMCOHCityId;
+            // }).prop('selected', true);
+            $('#cityId').val(data.GMCOHCityId).change();
+            // $("#iddropdown").dropdown('set selected', ['${product.category}'] );
+
             $('#stateDesc1').val(data.GMCOHStateId);
             $('#countryDesc1').val(data.GMCOHCountryId);
 
@@ -111,15 +129,15 @@ $(document).on('click', '.edit', function () {
             $('#GMCOHBankId1').val(data.GMCOHBankId1);
             $('#bankName1').val(data.bankDesc1);
             // console.log('BankId1 : '+ data.GMCOHBankId1);
-            // $('#branchId1').val(data.GMCOHBranchId1).trigger();
-            $('#branchId1').children("option:selected").val(data.GMCOHBranchId1);
+            $('#branchId1').val(data.GMCOHBranchId1).change();
+            // $('#branchId1').children("option:selected").val(data.GMCOHBranchId1);
 
             $('#GMCOHIFSId1').val(data.GMCOHIFSId1);
             $('#GMCOHBankAccNo1').val(data.GMCOHBankAccNo1);
             $('#GMCOHBankAcName1').val(data.GMCOHBankAcName1);
             $('#GMCOHBankId2').val(data.GMCOHBankId2);
             $('#bankName2').val(data.bankDesc2);
-            $('#GMCOHBranchId2').val(data.GMCOHBranchId2);
+            $('#branchId2').val(data.GMCOHBranchId2).change();
             $('#GMCOHIFSId2').val(data.GMCOHIFSId2);
             $('#GMCOHBankAccNo2').val(data.GMCOHBankAccNo2);
             $('#GMCOHBankAcName2').val(data.GMCOHBankAcName2);
@@ -140,6 +158,8 @@ $(document).on('click', '.edit', function () {
 // When submit button is pushed
 $('#singleLevelDataEntryForm').on('submit', function (event) {
     event.preventDefault();
+    console.log($("#singleLevelDataEntryForm").serialize());
+    return;
     $.ajax({
         url: $(this).attr('action'),
         method: $(this).attr('method'),
@@ -275,15 +295,9 @@ $(document).on('click', '.restore', function () {
 });
 // restore Ends
 
-$('#cityId').change(function (e) {
+$('#cityId').on('change', (function (e) {
+    // alert('Shishir');
     let id = $(this).val();
-    // alert(e);
-    // console.log(e);
-    // if (e.handled == true) {
-    //     e.handled = false;
-    //     return;
-    // }
-
     $.ajax({
         url: "/city/dropdown",
         type: 'post',
@@ -298,13 +312,12 @@ $('#cityId').change(function (e) {
             $('#countryDesc1').val(response.countryDesc1);
         }
     })
-});
-
+}));
 
 // Bank branch dropdown
 $('#branchId1').change(function () {
     let id = $(this).val();
-    alert('branchId1');
+    // alert('branchId1');
     console.log(id);
     $.ajax({
         url: "/bankBranch/branchDetail",
@@ -323,6 +336,7 @@ $('#branchId1').change(function () {
 // Bank branch dropdown
 $('#branchId2').change(function () {
     let id = $(this).val();
+
     $.ajax({
         url: "/bankBranch/branchDetail",
         type: 'post',
@@ -337,7 +351,6 @@ $('#branchId2').change(function () {
         }
     })
 });
-
 $('#currenyId,#quantityId,#valueId,#cityId,#branchId1,#branchId2').select2({
     dropdownParent: $('#entryModalSmall')
 });

@@ -81,8 +81,9 @@ class CompanyController extends Controller
     }
     public function PostData(Request $request)
     {
-        // echo 'Data Submitted.';
-        // return $request->input();
+        echo 'Data Submitted.';
+        return $request->input();
+
         if ($request->get('button_action') == 'insert') {
             $validator = Validator::make($request->all(), [
                 'GMCOHCompanyId' => 'required|min:2|max:10||unique:t05901l01,GMCOHCompanyId',

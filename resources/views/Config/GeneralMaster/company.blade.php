@@ -232,11 +232,12 @@
                                                                 <span class="error-text currenyId_error text-danger"
                                                                     style='float:right;'></span>
                                                                 <select id='currenyId' name='currenyId'
-                                                                    style='width: 100%;' class="form-control select2">
+                                                                    style='width: 100%;'>
                                                                     <option value=''>-- Select Currency Id --
                                                                     </option>
                                                                     @foreach ($currency_list as $currency)
-                                                                        <option value='{{ $currency->GMCRHCurrencyId }}'>
+                                                                        <option value='{{ $currency->GMCRHCurrencyId }}'
+                                                                            <option {{ ($currency->GMCRHCurrencyId) == 'INR' ? 'selected' : '' }}>
                                                                             {{ $currency->GMCRHCurrencyId }}</option>
                                                                     @endforeach
                                                                 </select>
