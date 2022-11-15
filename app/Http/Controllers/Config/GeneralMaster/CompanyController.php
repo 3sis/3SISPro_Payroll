@@ -153,22 +153,22 @@ class CompanyController extends Controller
     // City Details
     public function getcityStateDropDown(Request $request)
     {
-        $City_Detail = collect(City::with('fnState','fnCountry')->where('GMCTHCityId', $request->id)->first())->collapse();
-
-        $geographicDetail['stateId'] = $City_Detail['GMSMHStateId'];
-        $geographicDetail['stateDesc1'] = $City_Detail['GMSMHDesc1'];
-        $geographicDetail['countryId'] = $City_Detail['GMCMHCountryId'];
-        $geographicDetail['countryDesc1'] = $City_Detail['GMCMHDesc1'];
-
+        $City_Detail = City::with('fnState','fnCountry')->where('GMCTHCityId', $request->id)->first();
+        $geographicDetail['stateId'] = $City_Detail['fnState']['GMSMHStateId'];
+        $geographicDetail['stateDesc1'] = $City_Detail['fnState']['GMSMHDesc1'];
+        $geographicDetail['countryId'] = $City_Detail['fnCountry']['GMCMHCountryId'];
+        $geographicDetail['countryDesc1'] = $City_Detail['fnCountry']['GMCMHDesc1'];
         return response()->json($geographicDetail);
-
     }
     // Branch Details
     public function getBankBranch(Request $request)
     {
-        $branchDetails = $this->getBranchDetails($request->id);
-        // dd($branchDetails);
-        return response()->json($branchDetails);
+        $Branch_Detail = BranchName::with('fnBankDetail')->where('BMBRHBranchId', $request->id)->first();
+        $branchDetail = [];
+        $branchDetail['BankId'] = $Branch_Detail['fnBankDetail']['BMBNHBankId'];
+        $branchDetail['bankDesc1'] = $Branch_Detail['fnBankDetail']['BMBNHDesc1'];
+        $branchDetail['IFSCId'] = $Branch_Detail['BMBRHIFSCId'];
+        return response()->json($branchDetail);
     }
     //tab design test
     public function Tab()

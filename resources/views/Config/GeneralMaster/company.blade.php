@@ -55,7 +55,8 @@
                             <div class='modal-body'>
                                 <div class="container-fluid">
                                     <div class="table-responsive">
-                                        <table id="html-extension3SIS" class="{{ $theme_Browser2_3SIS }} style="width:100%">
+                                        <table id="html-extension3SIS"
+                                            class="{{ $theme_Browser2_3SIS }} style="width:100%">
                                             <thead>
                                                 <tr>
                                                     <th title="Company Master">ID</th>
@@ -236,8 +237,10 @@
                                                                     <option value=''>-- Select Currency Id --
                                                                     </option>
                                                                     @foreach ($currency_list as $currency)
-                                                                        <option value='{{ $currency->GMCRHCurrencyId }}'
-                                                                            <option {{ ($currency->GMCRHCurrencyId) == 'INR' ? 'selected' : '' }}>
+                                                                        <option
+                                                                            value='{{ $currency->GMCRHCurrencyId }}'
+                                                                            <option
+                                                                            {{ $currency->GMCRHCurrencyId == 'INR' ? 'selected' : '' }}>
                                                                             {{ $currency->GMCRHCurrencyId }}</option>
                                                                     @endforeach
                                                                 </select>
@@ -252,7 +255,8 @@
                                                                     style='width: 100%;'>
                                                                     <option value='0'>0</option>
                                                                     <option value='1'>1</option>
-                                                                    <option selected='selected' value='2'>2</option>
+                                                                    <option selected='selected' value='2'>2
+                                                                    </option>
                                                                     <option value='3'>3</option>
                                                                     <option value='4'>4</option>
                                                                     <option value='5'>5</option>
@@ -268,7 +272,8 @@
                                                                     style='width: 100%;'>
                                                                     <option value='0'>0</option>
                                                                     <option value='1'>1</option>
-                                                                    <option selected='selected' value='2'>2</option>
+                                                                    <option selected='selected' value='2'>2
+                                                                    </option>
                                                                     <option value='3'>3</option>
                                                                     <option value='4'>4</option>
                                                                     <option value='5'>5</option>
@@ -455,7 +460,8 @@
                                                                             <div class='form-group'>
                                                                                 <label
                                                                                     style='color:#ffc107'>Branch</label>
-                                                                                <select id='branchId1' name='branchId1'
+                                                                                <select id='branchId1'
+                                                                                    name='branchId1'
                                                                                     style='width: 100%;'>
                                                                                     <option value=''>-- Select
                                                                                         Branch --</option>
@@ -486,7 +492,8 @@
                                                                             <div class='form-group'>
                                                                                 <label style='color:#ffc107'>IFS
                                                                                     Code</label>
-                                                                                <input type="text" name="GMCOHIFSId1"
+                                                                                <input type="text"
+                                                                                    name="GMCOHIFSId1"
                                                                                     id="GMCOHIFSId1"
                                                                                     class="form-control" readonly />
                                                                             </div>
@@ -534,11 +541,12 @@
                                                                             <div class='form-group'>
                                                                                 <label
                                                                                     style='color:#20c997'>Branch</label>
-                                                                                <select id='branchId2' name='branchId2'
+                                                                                <select id='branchId2'
+                                                                                    name='branchId2'
                                                                                     style='width: 100%;'>
                                                                                     <option value=''>-- Select
                                                                                         Branch --</option>
-                                                                                        @foreach ($branch_list as $bank1)
+                                                                                    @foreach ($branch_list as $bank1)
                                                                                         <option
                                                                                             value='{{ $bank1->BMBRHBranchId }}'>
                                                                                             {{ $bank1->BMBRHDesc1 }}
@@ -565,7 +573,8 @@
                                                                             <div class='form-group'>
                                                                                 <label style='color:#20c997'>IFS
                                                                                     Code</label>
-                                                                                <input type="text" name="GMCOHIFSId2"
+                                                                                <input type="text"
+                                                                                    name="GMCOHIFSId2"
                                                                                     id="GMCOHIFSId2"
                                                                                     class="form-control" readonly />
                                                                             </div>
@@ -677,7 +686,8 @@
                                                                             name='GMCOHImageFileName'
                                                                             id='GMCOHImageFileName'
                                                                             class='form-control few-options'
-                                                                            maxlength="500" placeholder="Company Logo">
+                                                                            maxlength="500"
+                                                                            placeholder="Company Logo">
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-6">
@@ -686,7 +696,8 @@
                                                                         <input type="text" name='GMCOHFolderName'
                                                                             id='GMCOHFolderName'
                                                                             class='form-control few-options'
-                                                                            maxlength="200" placeholder="Logo Folder Name">
+                                                                            maxlength="200"
+                                                                            placeholder="Logo Folder Name">
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -745,11 +756,14 @@
                                     </div>
                                 </div>
                                 <div class='modal-footer'>
-                                    <!--To display success messages-->
-                                    <span id='form_output' style='float:left; padding-left:0px'></span>
+                                    <!--To display success messages -->
+
                                     <input type="hidden" name='button_action' id='button_action' value='insert'>
+
+                                    <span id='form_output' class="mr-auto">Save changes</span>
+
                                     <input type="submit" name='submit' id='action' value='Add'
-                                        class='btn btn-outline-success mb-2'>
+                                        class='btn btn-success mb-2'>
                                 </div>
                             </form>
                         </div>

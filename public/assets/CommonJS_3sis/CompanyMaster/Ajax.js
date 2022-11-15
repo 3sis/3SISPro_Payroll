@@ -24,7 +24,7 @@ $(document).ready(function () {
         stripeClasses: [],
         pageLength: 6,
         lengthMenu: [6, 10, 20, 50],
-        order: [8, "desc"],
+        order: [0, "desc"],
         processing: true,
         serverSide: true,
         // CopyChange
@@ -160,6 +160,7 @@ $('#singleLevelDataEntryForm').on('submit', function (event) {
     // console.log($("#singleLevelDataEntryForm").serialize());
     // return;
     $.ajax({
+
         url: $(this).attr('action'),
         method: $(this).attr('method'),
         data: new FormData(this),
@@ -203,6 +204,11 @@ $(document).on('click', '.delete', function () {
         data: { id: UniqueId },
         dataType: 'json',
         success: function (data) {
+            // success
+            // error
+        // if(data.status == 'success'){
+
+        // }
             $deleteMessage3SIS = fnSingleLevelDeleteConfirmation($modalTitle, data.GMCOHCompanyId, '');
             $('#DeleteRecord').html($deleteMessage3SIS);
             $('#modalZoomDeleteRecord3SIS').modal('show');

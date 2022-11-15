@@ -4,6 +4,7 @@ namespace App\Models\Config\Banking;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Config\Banking\BankName;
 
 class BranchName extends Model
 {
@@ -31,4 +32,8 @@ class BranchName extends Model
             'BMBRHLastUpdated' => 'datetime:d/m/Y',
             'BMBRHDeletedAt' => 'datetime:d/m/Y'
         ];
+        public function fnBankDetail()
+        {
+            return $this->hasOne(BankName::class, 'BMBNHBankId', 'BMBRHBankId');
+        }
 }
