@@ -176,13 +176,24 @@ $('#singleLevelDataEntryForm').on('submit', function (event) {
                     $('#' + prefix).css('border-color', '#dc3545');
                 });
             } else {
-                $finalMessage3SIS = fnSingleLevelFinalSave(data.masterName, data.Id, data.Desc1, data.updateMode);
+                if (data.button_action== 'insert') {
+                    $finalMessage3SIS = fnSuccessMsg('Added', 'Company', $('#GMCOHCompanyId').val(),$('#GMCOHDesc1').val());
+                }else{
+                    $finalMessage3SIS = fnSuccessMsg('Edited', 'Company', $('#GMCOHCompanyId').val(),$('#GMCOHDesc1').val());
+                }
+                // $('#GMCOHCompanyId').val();
+                // $('#GMCOHDesc1').val();
+                // $finalMessage3SIS = fnSingleLevelFinalSave(data.masterName, data.Id, data.Desc1, data.updateMode);
                 $('#FinalSaveMessage').html($finalMessage3SIS);
                 fnReinstateFormControl('0');
                 $('#landingPageBrowser3SIS').DataTable().ajax.reload();
                 if (data.updateMode == 'Updated') {
                     $('#entryModalSmall').modal('hide');
                     $('#modalZoomFinalSave3SIS').modal('show');
+                    $('#userConfirmationNo').one('click', function(){
+                        $('#modalZoomFinalSave3SIS').modal('hide');
+                        $('#userConfirmationNo').die("click");
+                    });
                 }
                 else {
                     $('#form_output').html($finalMessage3SIS);
@@ -203,9 +214,29 @@ $(document).on('click', '.delete', function () {
         data: { id: UniqueId },
         dataType: 'json',
         success: function (data) {
-            $deleteMessage3SIS = fnSingleLevelDeleteConfirmation($modalTitle, data.GMCOHCompanyId, '');
+            // $deleteMessage3SIS = fnSingleLevelDeleteConfirmation($modalTitle, data.GMCOHCompanyId, '');
+            $deleteMessage3SIS = fnConfirmationMsg('Delete', 'Company', data.GMCOHCompanyId,data.GMCOHDesc1);
             $('#DeleteRecord').html($deleteMessage3SIS);
             $('#modalZoomDeleteRecord3SIS').modal('show');
+            // $('#modalConfirmationYesNo3SIS').modal('show');
+            $('#userConfirmationNo').one('click', function(){
+                $('#modalZoomDeleteRecord3SIS').modal('hide');
+                $('#userConfirmationNo').die("click");
+            });
+            // Swal.fire({
+            //     title:  $deleteMessage3SIS,
+            //     showDenyButton: true,
+            //     showCancelButton: true,
+            //     confirmButtonText: 'Delete',
+            //     denyButtonText: `Don't delete`,
+            //   }).then((result) => {
+            //     /* Read more about isConfirmed, isDenied below */
+            //     if (result.isConfirmed) {
+            //       Swal.fire('Delete!', '', 'success')
+            //     } else if (result.isDenied) {
+            //       Swal.fire('record are not deleted', '', 'info')
+            //     }
+            //   })
         }
     });
     // Fetch Record Ends

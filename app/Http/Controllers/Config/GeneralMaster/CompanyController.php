@@ -7,6 +7,7 @@ use App\Models\Config\Banking\BranchName;
 use App\Models\Config\GeneralMaster\Currency;
 use App\Models\Config\Geographic\City;
 use App\Models\t92;
+use Illuminate\Support\Arr;
 
 // Add Model here
 
@@ -44,6 +45,10 @@ class CompanyController extends Controller
         $branch_list = BranchName::all();
 
         $UserId = Auth::user()->name;
+        $City_Detail = City::with('fnState','fnCountry')->first();
+        // coustomeLog($City_Detail);
+        // dump("test data");
+        $geographicDetail['stateId'] = $City_Detail['fnState']['GMSMHStateId'];
         return view('Config.GeneralMaster.company',
             compact('menu', 'currency_list', 'city_list', 'branch_list',
                 'UserId', 'theme_Browser1_3SIS', 'theme_Browser2_3SIS', 'theme_ContentModal1D_3SIS',
@@ -153,22 +158,24 @@ class CompanyController extends Controller
     // City Details
     public function getcityStateDropDown(Request $request)
     {
-        $City_Detail = collect(City::with('fnState','fnCountry')->where('GMCTHCityId', $request->id)->first())->collapse();
-
-        $geographicDetail['stateId'] = $City_Detail['GMSMHStateId'];
-        $geographicDetail['stateDesc1'] = $City_Detail['GMSMHDesc1'];
-        $geographicDetail['countryId'] = $City_Detail['GMCMHCountryId'];
-        $geographicDetail['countryDesc1'] = $City_Detail['GMCMHDesc1'];
-
+        $City_Detail = City::with('fnState','fnCountry')->where('GMCTHCityId', $request->id)->first();
+        // coustomeLog($City_Detail);
+        // dump("test data");
+        $geographicDetail['stateId'] = $City_Detail['fnState']['GMSMHStateId'];
+        $geographicDetail['stateDesc1'] = $City_Detail['fnState']['GMSMHDesc1'];
+        $geographicDetail['countryId'] = $City_Detail['fnCountry']['GMCMHCountryId'];
+        $geographicDetail['countryDesc1'] = $City_Detail['fnCountry']['GMCMHDesc1'];
         return response()->json($geographicDetail);
-
     }
     // Branch Details
     public function getBankBranch(Request $request)
     {
-        $branchDetails = $this->getBranchDetails($request->id);
-        // dd($branchDetails);
-        return response()->json($branchDetails);
+        $Branch_Detail = BranchName::with('fnBankDetail')->where('BMBRHBranchId', $request->id)->first();
+        $branchDetail = [];
+        $branchDetail['BankId'] = $Branch_Detail['fnBankDetail']['BMBNHBankId'];
+        $branchDetail['bankDesc1'] = $Branch_Detail['fnBankDetail']['BMBNHDesc1'];
+        $branchDetail['IFSCId'] = $Branch_Detail['BMBRHIFSCId'];
+        return response()->json($branchDetail);
     }
     //tab design test
     public function Tab()
@@ -176,11 +183,9 @@ class CompanyController extends Controller
         // echo 'Data Submitted.11';
         $data = $this->dataTableXLSchemaTrait();
         $menu = $this->menu();
-
         $currency_list = Currency::all();
         $city_list = City::all();
         $branch_list = BranchName::all();
-
         return view('CommonMasters.GeneralMaster.tab', compact('menu', 'currency_list', 'city_list', 'branch_list'))->with($data);
     }
 }
